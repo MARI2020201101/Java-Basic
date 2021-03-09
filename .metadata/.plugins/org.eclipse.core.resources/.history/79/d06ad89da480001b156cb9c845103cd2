@@ -1,0 +1,17 @@
+package oop0309;
+
+public class Test05_conversion {
+	
+public static void main(String[] args) {
+	System.out.println((char)65);
+	System.out.println((char)66);
+	System.out.println((char)97);
+	System.out.println((char)98);
+	
+	System.out.println((int)'+');
+	System.out.println((char)43);
+	System.out.println((int)' ');
+	System.out.println("#" + (char)32 +"#");
+	
+}
+}

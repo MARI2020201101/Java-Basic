@@ -1,0 +1,16 @@
+package oop0309;
+
+public class Test04_bit {
+	
+	public static void main(String[] args) {
+		System.out.println(5&3);//비트곱
+		System.out.println(5|3);//비트합
+		
+		//5->(2진수로)101
+		/*
+		 128 64 32 16 8 4 2 1
+		 
+		 */
+	}
+
+}
