@@ -1,0 +1,15 @@
+package oop0310;
+
+public class Test03_for {
+
+	public static void main(String[] args) {
+		for(int a=0;a<10;a++) {
+			System.out.println(a+" java");
+		}
+		//유효범위 scope 
+		//global variable (충돌시<) local variable
+		//지역변수의 우선순위가 가장높다
+
+	}
+
+}

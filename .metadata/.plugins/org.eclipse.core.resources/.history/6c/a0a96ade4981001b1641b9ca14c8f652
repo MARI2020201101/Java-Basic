@@ -1,0 +1,14 @@
+
+package oop0310;
+
+public class Test02_swith {
+public static void main(String[] args) {
+	
+	switch("A") {
+	case "a": System.out.println("SEOUL");break;
+	case "b": System.out.println("BUSAN");break;
+	case "c": System.out.println("JEJU");break;
+	}
+	
+}
+}

@@ -1,0 +1,19 @@
+package oop0310;
+
+public class Test01_if {
+	public static void main(String[] args) {
+		
+		String name ="mari";
+		int kor =100, eng=100, mat=100;
+		
+		int aver = (kor+eng+mat)/3;
+		System.out.printf("이름 : %s\n" , name);
+		System.out.printf("국어 : %d\n" , kor);
+		System.out.printf("영어 : %d\n" , eng);
+		System.out.printf("수학 : %d\n" , mat);
+		System.out.printf("평균 : %d\n" , aver);
+		
+	}
+	
+
+}

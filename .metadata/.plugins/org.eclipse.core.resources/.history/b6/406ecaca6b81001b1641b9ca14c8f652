@@ -1,0 +1,14 @@
+package oop0310;
+
+public class Test06_quiz {
+	public static void main(String[] args) {
+		//문제1) 1~3까지 누적의 합을 구하시오
+		int total = 0;
+		for(int a =1 ;a <4; a++) {
+			total+=a;
+			
+		}System.out.println("누적의 합 : " +total);
+		//문제2) 1~5중에서 짝수의 갯수를 구하시오
+	}
+
+}
