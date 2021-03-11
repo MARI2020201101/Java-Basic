@@ -1,0 +1,21 @@
+package oop0311;
+
+public class Test03_quiz {
+
+	public static void main(String[] args) {
+		char[] ch = {'S','o','l','D','e','s','k'};
+		//문제) 대문자는 소문자로, 소문자는 대문자로+각각 개수
+		System.out.println((int) 'A');
+		int bigNum = 0;
+		int smallNum = 0;
+		char[] result = null;
+		for(char cha : ch ) {
+			if(cha < 'a' ) {
+				
+			}else
+		}
+		
+		//문제2)모음의 갯수를 구하시오(A E I O U a e i o u)
+	}
+
+}
