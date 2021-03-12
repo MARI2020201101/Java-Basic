@@ -1,0 +1,10 @@
+package oop0311;
+
+public class Test06_weekday {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

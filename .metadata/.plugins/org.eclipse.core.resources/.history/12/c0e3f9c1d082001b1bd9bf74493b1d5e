@@ -1,0 +1,20 @@
+package oop0312;
+
+public class Test01_method {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Math.pow(2, 4));
+		System.out.println(Math.sqrt(4));
+		System.out.println();
+
+	}
+	
+	public static void test1() {
+		System.out.println("JAVA");
+	}
+	public static void test2() {
+		System.out.println("PYTHON");
+	}
+
+}
