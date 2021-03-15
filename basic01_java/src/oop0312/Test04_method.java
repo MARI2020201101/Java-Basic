@@ -1,5 +1,8 @@
 package oop0312;
 
+import java.util.Arrays;
+//java라고 하는 패키지 안에 util이라는 패키지 안에 Arrays라는 java클래스
+
 public class Test04_method {
 	
 	public static void test1(int a, int b) {
@@ -69,7 +72,52 @@ public class Test04_method {
 			}
 		}
 		//정렬하기 sorting~~
+		/*
+		 * 정렬의 유형
+		 * 1)ascending ASC 		1->10, A->z, ㄱ->ㅎ
+		 * 2)descending DESC  	
+		 * 
+		 * 정렬의 방법
+		 * 1) 삽입정렬 (insertion sort)
+		 * 2) 선택정렬 (selection sort)
+		 * 3) 버블정렬 (bubble sort)
+		 * 
+		 * 자바에는 정렬해주는 클래스가 내장되어있다
+		 */
+		int[] nums = {2,9,6,3,5};
+		Arrays.sort(nums);
+		Arrays.sort(lotto);
+		System.out.print("\n--------\n");
+		for(int i=0; i<nums.length; i++) {
+			System.out.print(nums[i]);
+		}
+		System.out.println("\n--------\n");
+		for(int i=0; i<lotto.length; i++) {	
+			System.out.println(lotto[i]);
+		}
 		
+		/*
+		 * 선택정렬(selection sort)
+		 * 9 7 5 3 -> 3 5 7 9
+		 * 4! 만큼
+		 * 
+		 * 버블정렬(bubble sort)
+		 * 옆에 애랑 비교해서 자리바꾸기
+		 * sort 안되면 처음부터 다시 비교
+		 */
+		int[] s = {9,7,5,3};
+		int tmp=0;
+		for(int i =0 ; i<s.length; i++) {
+			for(int j=0; j<s.length ; j++) {
+				if(s[i]>s[j])
+				tmp = s[i];
+				s[i]= s[j];
+				s[j]= tmp;
+			}
+		}System.out.println(s[0]);
+		
+		for(int ss : s)
+		System.out.println(ss);
 		
 		
 		

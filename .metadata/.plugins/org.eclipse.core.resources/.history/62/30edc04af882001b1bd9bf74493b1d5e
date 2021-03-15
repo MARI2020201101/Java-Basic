@@ -1,0 +1,33 @@
+package oop0312;
+
+public class Test05_quiz {
+	
+	public static double sd(int[] i) {
+		int result = 0;
+		int[] result2 = new int[i.length];
+		
+		for(int n =0; n<i.length; n++) {
+			result +=i[n];
+		}
+			result = result/i.length;
+		for(int n = 0; n<i.length ; n++) {
+			result2[n] =i[n]-result;
+		}
+		
+	}
+	public static void main(String[] args) {
+		//문제) 표준편차 구하기
+		int[] aver = {85,90,93,86,82};
+		double result = sd(aver);
+		System.out.println("표준편차 : " + result);
+		
+		/*
+		 * 1) aver의 평균 구하고
+		 * 	  aver의 각 요소에서 87.2를 뺀다
+		 * 
+		 * 2) 
+		 */
+
+	}
+
+}

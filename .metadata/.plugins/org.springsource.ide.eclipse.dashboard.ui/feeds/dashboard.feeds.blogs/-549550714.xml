@@ -125,7 +125,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;There is wide range of use cases where native makes could make sense for your Spring application:&lt;/p&gt;
+&lt;p&gt;There is wide range of use cases where native could make sense for your Spring application:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="ulist"&gt;
 &lt;ul&gt;
@@ -242,7 +242,7 @@ public class WebClientApplication {
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;The last and probably most powerful mechanism available when working with the ahead-of-time transformation system is the capability to automatically generate native-optimized code (source and bytecode) using the closed-world assumptions introduced by Spring Boot deployment model combined with GraalVM native image characteristics. The goal here is to limit the amount of required extra native configuration to increase the compatibility, by using code constructs that can be analyzed out of the box by the native image compiler, and lower the footprint by reducing the amount of configuration required for reflection, resources or proxies. A concrete example of that is an ahead-of-time transformation of the various &lt;a href="https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories"&gt;&lt;code&gt;spring.factories&lt;/code&gt;&lt;/a&gt; (the extension mechanism behind Spring Boot) to an optimized programmatic version that requires no reflection and that filters out unnecessary entries in the context for your application.&lt;/p&gt;
+&lt;p&gt;The last and probably most powerful mechanism available when working with the ahead-of-time transformation system is the capability to automatically generate native-optimized code (source and bytecode) using the closed-world assumptions introduced by Spring Boot deployment model combined with GraalVM native image characteristics. The goal here is to limit the amount of required extra native configuration to increase the compatibility, by using code constructs that can be analyzed out of the box by the native image compiler, and lower the footprint by reducing the amount of configuration required for reflection, resources or proxies. A concrete example of that is an ahead-of-time transformation of the various &lt;a href="https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories"&gt;&lt;code&gt;spring.factories&lt;/code&gt;&lt;/a&gt; (the extension mechanism behind Spring Boot) to an optimized programmatic version that requires no reflection and that filters out unnecessary entries in the context of your application.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;This is just a start for Spring AOT, we intend to add even more powerful transformations like &lt;a href="https://github.com/spring-projects-experimental/spring-native/issues/386"&gt;&lt;code&gt;@Configuration&lt;/code&gt; to functional configuration&lt;/a&gt; to replace runtime reflection by an ahead-of-time analysis that will automatically generate configuration classes that will use programmatic constructs like lambdas and method references. This will allow the GraalVM native image compiler to understand Spring configurations out of the box without needing any reflection configuration or &lt;code&gt;*.class&lt;/code&gt; resources.&lt;/p&gt;

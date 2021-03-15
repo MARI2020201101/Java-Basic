@@ -1,0 +1,14 @@
+package oop0312;
+
+public class Test06_overload {
+
+	public static void hap(int a) {}
+	public static void hap(int a, int b) {}
+	public static void hap(double a) {}
+	public static void hap(double a, double b) {}
+	public static void main(String[] args) {
+		//메소드 오버로드 조건: args갯수 혹은 자료형이 달라야함
+
+	}
+
+}

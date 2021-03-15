@@ -1,0 +1,27 @@
+package oop0315;
+
+import java.util.GregorianCalendar;
+
+public class Test02_constructor {
+
+	public static void main(String[] args) {
+		//생성자 함수 constructor
+		/*
+		 * - 클래스명과 동일한 함수
+		 * - new연산자와 함께 메모리를 할당할 때 사용
+		 * - 오버로딩이 가능하다(함수니까)
+		 */
+		//소멸자 함수 destructor -> 자바는 없음. 가비지 콜렉터가 얌얌해줌ㅎㅂㅎ
+		
+		GregorianCalendar today = new GregorianCalendar();
+		if(today.isLeapYear(2021)) {
+			System.out.println("윤년입니다");
+		}else System.out.println("평년입니다");
+		
+		int count1 = 0;
+		for(int y= 1 ; y<2021;y++) {
+			if(today.isLeapYear(y))count1++;
+		}System.out.println("윤년 count "+ count1);
+	}
+
+}

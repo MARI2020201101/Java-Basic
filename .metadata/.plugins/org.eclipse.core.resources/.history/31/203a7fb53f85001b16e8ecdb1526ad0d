@@ -1,0 +1,60 @@
+package oop0315;
+
+import java.util.GregorianCalendar;
+
+class School{
+	private String name;
+	private int kor,eng,mat;
+	private int aver;
+	public School() {
+	//기본 생성자 함수 = default constructor
+		//한개도 만들지 않으면 자동으로 생성됩니다. 
+		System.out.println("School()....");
+	}
+	
+	public void calc() {
+		this.aver= (kor+eng+mat)/3;
+		System.out.println("aver : "+aver);
+	}
+	public void disp() {
+		System.out.println("kor : "+kor);
+		System.out.println("mat : "+mat);
+		System.out.println("eng : "+eng);
+		System.out.println("aver : "+aver);
+	}
+}
+
+public class Test02_constructor {
+
+	public static void main(String[] args) {
+		//생성자 함수 constructor
+		/*
+		 * - 클래스명과 동일한 함수
+		 * - new연산자와 함께 메모리를 할당할 때 사용
+		 * - 오버로딩이 가능하다(함수니까)
+		 */
+		//소멸자 함수 destructor -> 자바는 없음. 가비지 콜렉터가 얌얌해줌ㅎㅂㅎ
+		
+		GregorianCalendar today = new GregorianCalendar();
+		if(today.isLeapYear(2021)) {
+			System.out.println("윤년입니다");
+		}else System.out.println("평년입니다");
+		
+		int count1 = 0;
+		for(int y= 1 ; y<2021;y++) {
+			if(today.isLeapYear(y))count1++;
+		}System.out.println("윤년 count :"+ count1);
+		
+		
+		School s1 = new School();
+		s1.calc();
+		s1.disp();
+		String a ="";		// 빈 문자열
+		String b = null;	//메모리할당은 하지않고 b라는 참조변수 선언만 해 놓음
+		System.out.println( "\"\" : "+ a);
+		System.out.println(a.hashCode());
+		System.out.println("null : " +b);
+		System.out.println(b.hashCode());
+	}
+
+}

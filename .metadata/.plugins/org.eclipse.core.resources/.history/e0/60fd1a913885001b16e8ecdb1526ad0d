@@ -1,0 +1,10 @@
+package oop0315;
+
+public class Test02_constructor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
