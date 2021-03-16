@@ -1,0 +1,15 @@
+package oop0315;
+
+public class Test05_String {
+
+	public static void main(String[] args) {
+		String str = new String("Gone with the Wind");
+		System.out.println(str.length()); // 문자 길이 (개수)
+		System.out.println(str.charAt(0));
+		System.out.println(str.charAt(str.length()-1));
+		System.out.println(str.indexOf('G'));
+		System.out.println(str.indexOf('w'));
+
+	}
+
+}

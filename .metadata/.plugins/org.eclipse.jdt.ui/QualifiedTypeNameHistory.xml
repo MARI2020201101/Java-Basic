@@ -5,4 +5,7 @@
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="oop0315.Test01_class.Sungjuk"/>
+    <fullyQualifiedTypeName name="oop0315.School"/>
+    <fullyQualifiedTypeName name="oop0315.Test03_this.Score"/>
 </qualifiedTypeNameHistroy>

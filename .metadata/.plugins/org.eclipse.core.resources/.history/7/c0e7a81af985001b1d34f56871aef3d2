@@ -1,0 +1,15 @@
+package oop0316;
+
+public class Test02_static {
+public static void main(String[] args) {
+	//RAM 의 공간 : static.heap(new ).stack(지역변수)
+	//static특징
+	//1번밖에 메모리 할당 안됨. 자기만의 static공간이 있기때문에 new없이 사용가능
+	//별도의 객체생성 없이 사용 가능
+	
+	System.out.println(Math.E); //static 변수
+	System.out.println(Math.abs(-3)); //static 함수
+	System.out.println(String.format("%.2f", 12.345));
+	//클래스 이름으로 바로 접근한다
+}
+}

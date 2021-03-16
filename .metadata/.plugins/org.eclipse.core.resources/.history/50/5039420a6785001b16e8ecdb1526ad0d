@@ -1,0 +1,10 @@
+package oop0315;
+
+public class Test05_String {
+
+	public static void main(String[] args) {
+		String str = new String("Gone with the Wind");
+
+	}
+
+}

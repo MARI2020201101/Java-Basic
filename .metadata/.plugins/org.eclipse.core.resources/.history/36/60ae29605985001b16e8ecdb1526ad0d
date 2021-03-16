@@ -1,0 +1,43 @@
+package oop0315;
+
+public class Jumsu {
+		private int no;
+		private String name;
+		private int[] answer = new int[5];
+		private char[] ox = new char[5];
+		private int score;
+		private int rank;
+		
+		public Jumsu(){};
+		public Jumsu(int no, String name) {
+			this.no=no;
+			this.name=name;}
+		public void compute() {
+			int[] dap = {3,3,3,3,3};
+			int score =0;
+			for(int i =0 ; i<dap.length; i++) {
+				if(answer[i]==dap[i]) {
+					score+=20;
+					ox[i] = 'O'; 
+				}else {
+					ox[i] = 'X';
+				}	
+			}this.score = score;
+		}
+		
+		public void calc(boolean[] problem, int finalNo) {
+			int score =0;
+			for(int i=0; 0<problem.length; i++) {
+				if(problem[i]) {
+					ox[i] = 'O'; 
+					score+=20;
+				}else {ox[i] = 'X';}
+				}this.score = score;
+			}
+				
+		
+		public void calcRank(int finalNo) {
+			
+		}
+		
+}

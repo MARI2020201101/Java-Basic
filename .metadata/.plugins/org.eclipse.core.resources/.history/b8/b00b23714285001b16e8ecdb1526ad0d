@@ -1,0 +1,18 @@
+package oop0315;
+
+public class Test03_this {
+
+	public static void main(String[] args) {
+		// this
+		/*
+		 * -> 클래스 본인을 가리키는 대명사
+		 * -> 일반 지역변수와 멤버변수를 구분하기 위함
+		 * 
+		 * this()
+		 * -> 자신의 생성자 함수간의 호출
+		 * -> 저는요~~( 영례는요~~ 라구 말 안함.. 쑥스러서..//) 
+		 */
+
+	}
+
+}

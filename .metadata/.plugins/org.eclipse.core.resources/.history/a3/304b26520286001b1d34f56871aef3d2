@@ -1,0 +1,13 @@
+package oop0316;
+
+public class Test03_final {
+
+	public static void main(String[] args) {
+		// final 마지막
+		//변수 : 변수를 상수화 
+		//함수 : 더이상 고쳐쓰지마! 오버라이드(재정의)불가
+		//클래스 : 종단클래스. 부모클래스가 될 수 없다
+
+	}
+
+}
