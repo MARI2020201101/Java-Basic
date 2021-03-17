@@ -1,0 +1,24 @@
+package oop0317;
+
+class Father{
+	public String name ="아버지";
+	public String addr = "주소";
+	
+	public Father() {}
+	public Father(String name, String addr) {
+		this.addr = addr;
+		this.name = name;
+	}
+	public void disp() {
+		System.out.println(this.name);
+		System.out.println(this.addr);
+	}
+}
+
+public class Test04_poly {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

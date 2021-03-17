@@ -1,0 +1,15 @@
+package oop0317;
+
+public class Jumin {
+	private String jumin;//ÁÖ¹Î¹øÈ£
+
+	public Jumin(String jumin) {
+		super();
+		this.jumin = jumin;
+	}
+
+	public Jumin() {
+		super();
+	}
+	
+}

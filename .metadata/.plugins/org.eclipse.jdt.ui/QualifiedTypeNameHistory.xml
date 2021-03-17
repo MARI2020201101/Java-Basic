@@ -8,4 +8,11 @@
     <fullyQualifiedTypeName name="oop0315.Test01_class.Sungjuk"/>
     <fullyQualifiedTypeName name="oop0315.School"/>
     <fullyQualifiedTypeName name="oop0315.Test03_this.Score"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+    <fullyQualifiedTypeName name="org.graalvm.compiler.lir.aarch64.AArch64ArithmeticOp.ExtendedAddSubShiftOp"/>
+    <fullyQualifiedTypeName name="oop0317.Suwon"/>
 </qualifiedTypeNameHistroy>

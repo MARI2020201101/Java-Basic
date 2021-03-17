@@ -1,0 +1,32 @@
+package oop0317;
+
+class Parent {
+	int one,two;
+	public Parent() {}
+	public Parent(int one, int two) {
+		this.one = one;
+		this.two = two;
+	}
+}
+
+class Child extends Parent{
+	int three;
+	public Child() {
+		super();
+	}
+	public Child(int a, int b, int c) {
+		//super.one = a; //private 아니라서 에러가 안나는데. 이런 경우가 거의 없을듯..
+		//super.two = b; //부모 것 상속 해서 -> 내것으로 바꾸버림
+		this.three =c;
+		super(a,b);
+	}
+}
+
+public class Test03_super {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

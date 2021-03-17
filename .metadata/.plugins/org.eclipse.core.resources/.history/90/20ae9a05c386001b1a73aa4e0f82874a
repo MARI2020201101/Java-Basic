@@ -1,0 +1,23 @@
+package oop0317;
+
+class School{
+	public School() {
+		System.out.println("school...");
+	}
+	
+}
+class MiddleSchool extends School{
+	String name ="middleschool";
+	public MiddleSchool() {
+		System.out.println("middle school...");
+	}
+}
+
+public class Test02_super {
+
+	public static void main(String[] args) {
+	MiddleSchool ms = new MiddleSchool();	
+
+	}
+
+}

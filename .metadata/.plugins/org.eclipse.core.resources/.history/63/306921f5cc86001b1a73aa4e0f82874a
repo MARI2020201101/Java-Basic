@@ -1,0 +1,46 @@
+package oop0317;
+
+class Father{
+	public String name ="아버지";
+	public String addr = "주소";
+	
+	public Father() {}
+	public Father(String name, String addr) {
+		this.addr = addr;
+		this.name = name;
+	}
+	public void disp() {
+		System.out.println(this.name);
+		System.out.println(this.addr);
+	}
+}
+
+class Son extends Father{
+	public String name;
+	public String addr;
+	public Son(String name, String addr) {
+		super();
+		this.name = name;
+		this.addr = addr;
+	}
+	public Son() {
+		super();
+	}
+	
+	
+}
+public class Test04_poly {
+
+	public static void main(String[] args) {
+		//다형성의 예 
+		//Calendar cal = new GregorianCalendar();
+		
+		//1) 일반적인 방식으로 객체 생성
+		// ->new 방식 = POJO방식 이라고 한다 .
+		//Plain Old Java Object
+		
+		Father fa = new Father();
+		fa.disp();
+	}
+
+}

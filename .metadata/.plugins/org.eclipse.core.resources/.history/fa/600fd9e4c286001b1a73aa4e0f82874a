@@ -1,0 +1,17 @@
+package oop0317;
+
+class School{
+	
+}
+class MiddleSchool extends School{
+	
+}
+
+public class Test02_super {
+
+	public static void main(String[] args) {
+	MiddleSchool ms = new MiddleSchool();	
+
+	}
+
+}

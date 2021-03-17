@@ -1,0 +1,14 @@
+package oop0317;
+
+class Jeju{}
+class Suwon{}
+class Inchon{}
+
+public class Test01_Object {
+
+	public static void main(String[] args) {
+//자바의 모든 클래스는 무조건 object 클래스를 상속받는다
+		
+	}
+
+}
