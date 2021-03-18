@@ -1,0 +1,88 @@
+package oop0317;
+
+import java.util.Calendar;
+import java.util.Locale;
+
+public class Jumin {
+	private String jumin;//ÁÖ¹Î¹øÈ£
+
+	public Jumin(String jumin) {
+		this.jumin = jumin;
+	}
+	public Jumin() {	}
+	
+	public boolean validate() {
+		//ÁÖ¹Î¹øÈ£°¡ À¯È¿ÇÑÁö °ËÁõ
+		//970129-2417212
+		boolean flag = false;
+		if(jumin.length()!= 13) {
+			return flag;
+		}
+		String[] jumins = jumin.split("");
+		int[] j = new int[14];
+		int result = 0;
+		for(int i =0; i<jumins.length ; i++) {
+			j[i] = Integer.parseInt(jumins[i]);
+			if(i+2<10)
+			result +=j[i]*((i+2)%10);
+			else result += j[i]*((i+2)%8);
+		}
+		if((11-(result%11))%11==j[13]) {
+			flag = true;
+		}
+		return flag;
+	}	
+	public void disp() {
+		//»ı³â¿ùÀÏ, ¼ºº°, ³ªÀÌ, ¶ì , »ì¾Æ¿Â ³¯¼ö Ãâ·ÂÇÏ±â 
+		//Áã ¼Ò È£¶ûÀÌ Åä³¢ ¿ë ¹ì ¸» ¾ç ¿ø¼şÀÌ ´ß °³ µÅÁö
+		/*
+		 * »ı³â¿ùÀÏ : 1989³â 12¿ù 30ÀÏ -> 
+		 * 			ÁÖ¹Î¹øÈ£ ¾ÕÀÚ¸® Â©¶ó¼­ °¡°ø
+		 * ÇöÀç ³¯Â¥ ±âÁØ 
+		 * ¼ºº° : ³²ÀÚ 
+		 * ³ªÀÌ : 32 -> GregorianCalendar Å¬·¡½º ÀÌ¿ë
+		 * ¶ì : ->ÅÂ¾î³­³âµµ %12 , 0 ¿ø¼şÀÌ 1´ß 2 °³..
+		 */
+		 String nai = ""; 
+		 String month = jumin.substring(2,4);
+		 String day = jumin.substring(4,6);
+		 String sex = jumin.substring(6,7);
+		 if(sex.equals("1")||sex.equals("2")) {
+			 nai = "19" + jumin.substring(0,2);
+		 }else nai = "20" + jumin.substring(0,2);
+		 System.out.printf("%s³â %s¿ù %sÀÏ \n", nai,month,day);
+		 
+		 if(sex.equals("1")||sex.equals("3")) {
+			 System.out.println("¼ºº° : ³²ÀÚ");
+		 }else System.out.println("¼ºº° : ¿©ÀÚ");
+		 Calendar cal = Calendar.getInstance(Locale.KOREA);
+		 int currYear = cal.YEAR;
+		 int currMonth = cal.MONTH;
+		 int currDay = cal.DAY_OF_MONTH;
+		 int Byear = Integer.parseInt(nai);
+		 int Bmonth = Integer.parseInt(month);
+		 int Bday = Integer.parseInt(day);
+		 
+		 int age = Byear - currYear;
+		 if((currMonth*100 + currDay)<(Bmonth*100+Bday)) {
+			 age--;
+		 }
+		 System.out.println("³ªÀÌ : " +age);
+		 switch(Byear%12) {
+		 case 0: System.out.println("¶ì : ¿ø¼şÀÌ"); break;
+		 case 1: System.out.println("¶ì : ´ß");break;
+		 case 2: System.out.println("¶ì : °³");break;
+		 case 3: System.out.println("¶ì : µÅÁö");break;
+		 case 4: System.out.println("¶ì : Áã");break;
+		 case 5: System.out.println("¶ì : ¼Ò");break;
+		 case 6: System.out.println("¶ì : È£¶ûÀÌ");break;
+		 case 7: System.out.println("¶ì : Åä³¢");break;
+		 case 8: System.out.println("¶ì : ¿ë");break;
+		 case 9: System.out.println("¶ì : ¹ì");break;
+		 case 10: System.out.println("¶ì : ¸»");break;
+		 case 11: System.out.println("¶ì : ¾ç");break;
+		 }
+		 
+	
+	}
+}

@@ -1,0 +1,27 @@
+package oop0317;
+abstract class Animal{
+	String name;
+	void view() {};
+	abstract void disp();
+}
+class Elephants extends Animal{
+
+	@Override
+	void disp() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+public class Test06_abstract {
+public static void main(String[] args) {
+	//abstract 추상클래스
+	/*
+	 * 객체 생성불가
+	 * but인터페이스를 더 많이 쓴다.(하긴 그렇지)
+	 * 추상메소드가 하나라도 있으면 추상클래스가 된다
+	 * 
+	 * 
+	 */
+}
+}
