@@ -1,0 +1,39 @@
+package oop0318;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class Test06_SetMap {
+	public static void main(String[] args) {
+		Set set = new HashSet();
+		set.add(3);
+		set.add(2.4);
+		set.add("BUSAN");
+		set.add('R');
+		Iterator li = set.iterator();
+		 while(li.hasNext()) {
+			 System.out.println(li.next());
+		 }//순서 상관없이 나온다
+		 //iterator -> 커서( C에서는 포인터라고들 함) 를 이용해서 접근하는 경우 
+		 
+		 HashMap<Integer, String> map = new HashMap();
+		 map.put(1, "one");
+		 map.put(2, "two");
+		 map.put(3, "three");
+		 map.put(4, "four");
+		 
+		 System.out.println(map.get(1));
+		 System.out.println(map.get(2));
+		 System.out.println(map.get(3));
+		 System.out.println(map.get(4));
+		 System.out.println(map.size());
+		 map.remove(4);
+		 System.out.println(map.size());
+		 //JSON에 저장할때 많이 씀!!!
+		 //NoSQL DB도 이런식으로 사용
+		 //python 에서 -> 자바의 map 이 딕셔너리임
+	}
+	
+}

@@ -1,0 +1,11 @@
+package oop0318;
+
+public class Test07_generic {
+public static void main(String[] args) {
+	//GENERIC
+	//E element를 수집하는 경우 자료형을 제한할 수 있다
+	//E element K key V value <T> <?>
+	//<참조자료형reference type>
+	
+}
+}

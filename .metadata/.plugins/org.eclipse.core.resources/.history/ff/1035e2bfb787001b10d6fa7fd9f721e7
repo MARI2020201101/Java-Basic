@@ -1,0 +1,7 @@
+package oop0318;
+
+public class Test07_generic {
+public static void main(String[] args) {
+	
+}
+}
