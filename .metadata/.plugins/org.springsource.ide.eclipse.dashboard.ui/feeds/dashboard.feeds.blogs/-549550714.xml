@@ -5,7 +5,29 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-03-18T20:58:00Z</updated>
+  <updated>2021-03-19T07:30:00Z</updated>
+  <entry>
+    <title>Spring Boot 2.5.0-M3 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/03/19/spring-boot-2-5-0-m3-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2021-03-19:4395</id>
+    <updated>2021-03-19T07:30:00Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that the third milestone of Spring Boot 2.5 has been released and is available from our &lt;a href="https://repo.spring.io/milestone/"&gt;milestone repository&lt;/a&gt;. This release &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.5.0-M3"&gt;adds a number of new features and bug fixes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Highlights of this milestone include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;OpenMetrics support for Prometheus&lt;/li&gt;
+  &lt;li&gt;Support for environment variable prefixes&lt;/li&gt;
+  &lt;li&gt;More Buildpack updates&lt;/li&gt;
+  &lt;li&gt;A fresh new look for the &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.0-M3/reference/html/"&gt;docs&lt;/a&gt; (including a &amp;ldquo;dark theme&amp;rdquo;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5.0-M3-Release-Notes"&gt;Spring Boot 2.5-M3 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.0-M3/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to get started with 2.5 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io/#!type=maven-project&amp;language=java&amp;platformVersion=2.5.0.M3&amp;packaging=jar&amp;jvmVersion=11&amp;groupId=com.example&amp;artifactId=demo&amp;name=demo&amp;description=Demo%20project%20for%20Spring%20Boot&amp;packageName=com.example.demo"&gt;start.spring.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.0-M2/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: fellow Java champion and legend Angie Jones</title>
     <link rel="alternate" href="https://spring.io/blog/2021/03/18/a-bootiful-podcast-fellow-java-champion-and-legend-angie-jones" />
@@ -939,28 +961,6 @@ Artem&lt;/p&gt;
     <updated>2021-02-26T00:27:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Spring legend &lt;a href="http://twitter.com/gregturn"&gt;Greg Turnquist (@gregturn)&lt;/a&gt; about Spring Data REST, HATEOAS, CI, and so much more. &lt;/p&gt;
 &lt;iframe title="Spring legend Greg Turnquist on Spring Data REST, HATEOAS, continuous integration and so much more" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/zamgb-fbea54?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Spring Cloud Gateway (Redux)</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/02/23/spring-tips-spring-cloud-gateway-redux" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-02-24:4374</id>
-    <updated>2021-02-24T03:50:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment of Spring Tips, I revisit Spring Cloud Gateway. &lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/puIJ1Mn9_LE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;p&gt;Here&amp;rsquo;s what&amp;rsquo;s inside: &lt;/p&gt;&lt;h2&gt;&lt;a href="#intro" class="anchor" name="intro"&gt;&lt;/a&gt;Intro&lt;/h2&gt;
-&lt;p&gt;11:12? Have your cake and Eat it too with an API Gateway&lt;/p&gt;&lt;h2&gt;&lt;a href="#basics" class="anchor" name="basics"&gt;&lt;/a&gt;Basics&lt;/h2&gt;
-&lt;p&gt;00:11:37? Get to Know Your New Gateway&lt;br/&gt;00:21:18? The Observable Gateway&lt;br/&gt;00:22:39? Meet The Supporting Characters&lt;br/&gt;00:24:30? Reactive Data For The Demo&lt;br/&gt;00:28:10? A Reactive WebSocket Endpoint&lt;br/&gt;00:31:00? Reactive HTTP Endpoint&lt;/p&gt;&lt;h2&gt;&lt;a href="#behind-the-source-with-spring-cloud-co-founder-lead-and-spring-cloud-gateway-creator-spencer-gibb" class="anchor" name="behind-the-source-with-spring-cloud-co-founder-lead-and-spring-cloud-gateway-creator-spencer-gibb"&gt;&lt;/a&gt;Behind the Source with Spring Cloud co-founder, lead, and Spring Cloud Gateway creator Spencer Gibb&lt;/h2&gt;
-&lt;p&gt;00:33:00? Spencer Gibb&lt;/p&gt;&lt;h2&gt;&lt;a href="#service-discovery" class="anchor" name="service-discovery"&gt;&lt;/a&gt;Service Discovery&lt;/h2&gt;
-&lt;p&gt;37:59? Introducing Spring Cloud Netflix Eureka&lt;br/&gt;40:49? Integrating Service Discovery into our Gateway&lt;br/&gt;43:01? Load Balanced URIs&lt;br/&gt;45:49? Route Events&lt;/p&gt;&lt;h2&gt;&lt;a href="#configuration" class="anchor" name="configuration"&gt;&lt;/a&gt;Configuration&lt;/h2&gt;
-&lt;p&gt;48:19? A Route By Any Other Name&lt;br/&gt;53:10? Yet another markup language (YAML)&lt;br/&gt;55:55? Using the Spring Cloud Config Server&lt;br/&gt;01:02? Reloading Configuration with the /refresh Actuator &lt;/p&gt;&lt;h2&gt;&lt;a href="#reliability" class="anchor" name="reliability"&gt;&lt;/a&gt;Reliability&lt;/h2&gt;
-&lt;p&gt;01:09:02? Protect Your Microservices&lt;br/&gt;01:10:43? If At First You Don&amp;rsquo;t Succeed, &lt;code&gt;Retry()&lt;/code&gt;&lt;br/&gt;01:18:00? Circuit Breakers&lt;br/&gt;01:22:35? Rate Limiters &lt;/p&gt;&lt;h2&gt;&lt;a href="#behind-the-source-with-spring-cloud-gateway-for-kubernetes-lead-chris-sterling" class="anchor" name="behind-the-source-with-spring-cloud-gateway-for-kubernetes-lead-chris-sterling"&gt;&lt;/a&gt;Behind The Source with Spring Cloud Gateway For Kubernetes Lead Chris Sterling&lt;/h2&gt;
-&lt;p&gt;01:35:38? Chris Sterling &lt;/p&gt;&lt;h2&gt;&lt;a href="#the-final-word" class="anchor" name="the-final-word"&gt;&lt;/a&gt;The Final Word&lt;/h2&gt;
-&lt;p&gt;01:38:32? This Tutorial Is Done, But The&lt;br/&gt;journey To Production Continues&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

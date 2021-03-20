@@ -5,6 +5,8 @@ import java.io.File;
 public class Test02_File {
 	//파일 클래스 : 파일에 대한 정보를 저장하는 클래스
 	//-> 파일명, 파일크기(용량) , 확장자ext 등
+	//파일 자체를 다룰 수도 있고, 파일의 내용을 다룰 수도 있다 ( 내용을 읽어들인다!!)
+	//파일의 확장자에 따라 어떤 input 을 하는지가 달라진다 - scanner(이미지 파일)..등등
 	
 	public static void main(String[] args) {
 		
@@ -31,6 +33,14 @@ public class Test02_File {
 				System.out.println("file.isDirectory() " + file.isDirectory());
 				System.out.println("file.getPath() " + file.getPath());
 				System.out.println("file.getAbsolutePath() " + file.getAbsolutePath());
+				
+				int lastname = file.getName().lastIndexOf(".");
+				String name = file.getName().substring(0,lastname);
+				System.out.println("파일 이름 with substring : " + name);
+				String ext = file.getName().substring(lastname+1);
+				System.out.println("파일 확장자 : " + ext);
+				//파일 삭제
+				file.delete();
 			}else {
 				System.out.println("파일 없어요!!");
 			}

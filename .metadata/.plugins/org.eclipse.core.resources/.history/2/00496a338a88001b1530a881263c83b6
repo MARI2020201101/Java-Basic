@@ -1,0 +1,48 @@
+package oop0319;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+public class Test06_sungjuk {
+public static void main(String[] args) {
+	//문제) 성적프로그램
+	//성적 입력자료 (sungjuk.txt )를 가져와서 -> read
+	//성적 결과 파일 완성하기 (result. txt) -> write
+	/*
+    1) 입력파일 : sungjuk.txt
+
+    2) 결과파일 : result.txt
+                          성 / 적 / 결 /과
+       ---------------------------------------------------
+       이름     국어   영어  수학   평균  등수  결과
+       ---------------------------------------------------                       
+       라일락    100  100  100  100   1   합격 ********** 장학생
+       진달래
+       진달래     50   55   60   55   4   불합격 *****
+       개나리     95   95   35   75   3   재시험 *******
+       무궁화     80   85   90   85   2   합격 ********
+       홍길동     60   40   30   43   5   불합격 ****
+       ---------------------------------------------------
+       */
+	
+	String filename = "C:\\java202102\\setup\\sungjuk.txt";
+	String resultfile = "C:\\java202102\\setup\\result.txt";
+	String s;
+	try {
+		
+		BufferedReader br = new BufferedReader(new FileReader(filename));
+		while(true) {
+			s = br.readLine();
+			if(s==null) break;
+			System.out.println(s);
+		}
+		br.close();
+				
+		//PrintWriter out = new PrintWriter(new FileWriter(resultfile));
+	} catch (Exception e) {
+		System.out.println("파일 읽기 실패 : " + e.getMessage());
+	}
+}
+}

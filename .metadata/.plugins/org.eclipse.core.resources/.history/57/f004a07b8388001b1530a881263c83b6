@@ -1,0 +1,19 @@
+package oop0319;
+
+public class Test05_output {
+	public static void main(String[] args) {
+		String filename ="C:\\java202102\\setup\\sungjuk.txt";
+		//파일 읽어들일때는 파일이 null이면 -> exception 그러나 출력은 좀 다르다!!
+		
+		//출력파일 (sungjuk.txt) 가 
+		//없는 경우 -> new ! 
+		//있는 경우 -> 덮어쓰기 OR 추가
+		
+		try {
+			
+		}catch(Exception e) {
+			System.out.println("실패 : " + e.getMessage());
+		}
+ 	}
+
+}
