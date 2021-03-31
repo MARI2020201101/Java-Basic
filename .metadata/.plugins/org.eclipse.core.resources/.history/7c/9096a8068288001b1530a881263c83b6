@@ -1,8 +1,0 @@
-package oop0319;
-
-public class Test05_output {
-	public static void main(String[] args) {
-		String filename ="C:\\java202102\\setup\\sungjuk.txt";
-	}
-
-}
