@@ -24,27 +24,36 @@ public class Test04_selectLike {
 		con = DriverManager.getConnection(url,user,password);
 		System.out.println("connection : "+ con);
 		
-		String col = "uname";
-		String word = "나";
+		String col = "uname";//조건
+		String word = "나"; //키워드
 		StringBuilder sql = new StringBuilder();
-		
-		sql.append(" SELECT sno FROM sungjuk ");
+		String where="";
+		sql.append(" SELECT sno,uname,kor,mat,eng,tot,aver,addr,wdate FROM sungjuk ");
 		if(word.length()>0) {
-			String where="";
+			
 			where += " WHERE ";
 			where += col;
 			where += " LIKE ";
 			where += " '%";
 			where += word;
-			where += " %'";
+			where += "%'";
 			
 			System.out.println(where);
 		}
-		pstmt = con.prepareStatement(sql.toString());
-		pstmt.setString(1, uname);
+		pstmt = con.prepareStatement(sql.toString()+where);
 		rs = pstmt.executeQuery();
 		while(rs.next()) {
-			System.out.println(rs.getString("KOR"));
+			System.out.print(rs.getInt("sno") +" ");
+			System.out.print(rs.getString("uname") +" ");
+			System.out.print(rs.getInt("kor") +" ");
+			System.out.print(rs.getInt("mat") +" ");
+			System.out.print(rs.getInt("eng") +" ");
+			System.out.print(rs.getInt("tot") +" ");
+			System.out.print(rs.getInt("aver") +" ");
+			System.out.print(rs.getString("addr") +" ");
+			System.out.print(rs.getString("wdate") +" ");
+			System.out.println();
+			
 				}
 	}catch(Exception e){
 		System.out.println("오라클DB 연결실패 : "+ e);
