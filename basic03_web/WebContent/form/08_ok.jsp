@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List.*" %>
@@ -20,7 +23,8 @@
 	for(String n : num){
 		out.print(n+"<br>");
 	}
-	//List<String> nums = Arrays.asList(num);
+	List<String> nums = Arrays.asList(num);
+	
 	String gender= request.getParameter("gender");
 	String agree=request.getParameter("agree");
 	String telecom=request.getParameter("telecom");
