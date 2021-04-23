@@ -11,8 +11,11 @@
 	<!-- 1) JSP메소드
 	<form action="computeok1.jsp" method="get">
 	 -->
-	 <!-- 2) new 연산자 -->
+	 <!-- 2) new 연산자 
 	 <form action="computeok2.jsp">
+	 -->
+	 <!-- 3) Java Bean -->
+	 <form action="computeok3.jsp">
 		<table border="1">
 		  <tr>
 		    <th>숫자1</th>

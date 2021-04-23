@@ -76,10 +76,8 @@
 		int cnt = pstmt.executeUpdate();
 		
 		if(cnt==0){
-			
 			out.println("<p>성적 수정에 실패했습니다.</p>");
 			out.println("<p><a href='javascript:history.back()'>[다시 시도하기]</a></p>");
-			
 			
 		}else{
 			out.println("<script>");
