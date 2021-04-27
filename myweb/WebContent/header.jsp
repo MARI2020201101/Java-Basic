@@ -7,10 +7,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <!-- 사용자정의 CSS + javascript -->
+  <!-- 주의사항 : CSS와 JS는 각 웹 브라우저에서 쿠키삭제하고 확인할 것. -->
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/layout.css">
+  <script src="<%=request.getContextPath()%>/js/myscript.js"></script>
 </head>
 <body>
 

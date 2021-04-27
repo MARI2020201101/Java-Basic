@@ -1,7 +1,10 @@
 $(document).ready(function(){
 	showTime();
 });
-
+$( window ).unload(function() {
+  clearTimeout(timer);
+});
+var timer;
 function showTime(){
             //문제) d값을 이용해서 날짜 정보를 아래와 같이 구성해서 id=clock에 출력하시오
         //      2021. 04. 14 (수) PM 03:19:20

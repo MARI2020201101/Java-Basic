@@ -36,3 +36,25 @@ ip : request 뽑아와서 저장
 insert into tb_bbs(bbsno, wname, subject, content, passwd,ip, grpno)
 values(sequence bbs_seq.nextval,
 ?,?,?,?,?,(select nvl(max(bbsno),0)+1 from tb_bbs));
+
+--글 list 전체목록보기
+select bbsno, wname, subject, readcnt, regdt
+from tb_bbs
+order by grpno desc, ansnum asc
+
+--상세보기
+select * from tb_bbs where bbsno=?
+
+--글 조회수 올리기
+update tb_bbs set readcnt=(readcnt+1) where bbsno=?
+
+--글 삭제하기
+delete tb_bbs where passwd=? and bbsno=?
+
+--글 수정하기(update)
+1) 패스워드 확인
+select wname, subject, content, passwd 
+where bbsno=? and passwd=?
+2) 글 수정
+update tb_bbs set wname=? , subject=?, content=?, passwd=?
+where bbsno=? 
