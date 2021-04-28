@@ -7,6 +7,7 @@
 <!-- Footer -->
 <footer class="container-fluid-2 bg-4 text-center">
   <p>Copyright &copy; 2021  MYWEB</p>
+  <p>mari20201101@gmail.com</p>
 </footer>
 
 </body>

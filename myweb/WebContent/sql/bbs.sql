@@ -52,9 +52,40 @@ update tb_bbs set readcnt=(readcnt+1) where bbsno=?
 delete tb_bbs where passwd=? and bbsno=?
 
 --글 수정하기(update)
-1) 패스워드 확인
-select wname, subject, content, passwd 
+update tb_bbs 
+set wname=? , subject=?, content=?
 where bbsno=? and passwd=?
-2) 글 수정
-update tb_bbs set wname=? , subject=?, content=?, passwd=?
-where bbsno=? 
+
+--답변쓰기 알고리즘
+1) 새글쓰기 : 최초의 부모글
+2) 답변쓰기 : 자식글
+3) 그룹번호(grpno) : 조상글과 같은 값공유.
+4) 들여쓰기(indent) : 자식-손자-증손자.. 등의 구분. 
+					갯수별로 indent기호 view에 출력.
+5) 글순서(ansno) : 같은 조상그룹내의 글 순서 조정. 부모글+1 을 하고, 
+					자기보다밑에오는 녀석들의 번호 조정필요.
+
+--글순서 재조정
+update tb_bbs set ansnum=ansnum+1 
+where ansnum>=ansnum+1 and grpno=조상그룹넘버;
+
+--글 목록
+select * from tb_bbs
+order by grpno desc, ansnum asc
+
+--reply의 indent,ansno넣기
+select grpno,indent,ansno from tb_bbs where bbsno=?
+
+--전체 게시글 갯수 출력
+select count(bbsno) from tb_bbs
+
+[검색]
+--키워드 한개일때 검색 ex)솔데스크
+select * from tb_bbs where wname like '%솔데스크%'
+select * from tb_bbs where subject like '%솔데스크%'
+select * from tb_bbs where content like '%솔데스크%'
+
+--제목 또는 내용에서 검색
+select * from tb_bbs 
+where wname like '%솔데스크%' 
+or subject like '%솔데스크%'

@@ -1,9 +1,7 @@
 /**
  * myscript.js
  */
-/*$(document).ready(function(){
-	bbsCheck();
-});*/
+
 function bbsCheck(){
 	//1) wname 작성자 : 두글자 이상
 	var wname = $("#wname").val().trim();
@@ -35,4 +33,21 @@ function bbsCheck(){
 		return false;
 	}
 	return true;
+
 }//bbsCheck() end
+var message="";
+function pwCheck(){
+	var passwd = $("#passwd").val().trim();
+	if(passwd.length<4||isNaN(passwd)){
+		alert("비밀번호는 네글자 이상 숫자이어야 합니다.");
+		$("#passwd").focus();
+		return false;
+		}
+		
+		message="삭제된 내용은 복구되지 않습니다. \n진행할까요?";
+		if(confirm(message)){
+			return true;
+		}else{
+			return false;
+		}
+	}//pwCheck() end

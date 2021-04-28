@@ -61,3 +61,7 @@ body {
 .readbox-color{
 	background-color: #fff !important;
 }
+th{
+	background-color: rgb(26, 188, 156, .6) ;
+}
+

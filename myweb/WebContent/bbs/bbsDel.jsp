@@ -6,16 +6,19 @@
 <!-- 본문 시작 bbsDel.jsp -->
 <h3>* 글 삭제 *</h3>
 <p><a href="bbsList.jsp">[글목록]</a></p>
+<br>
 <div class="container">
-<form>
-<type="hidden" id="bbsno" name="bbsno" value="<%= dto.getBbsno()%>">
- <div class="form-group">
-    <label for="password">비밀번호 입력</label>
-    <small id="passwd" class="form-text text-muted ">삭제를 위하여 비밀번호를 입력해 주십시요.</small>
-    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Enter password">
-    <button class="btn btn-danger">삭제</button>
-  </div>
-</form>
+	<form method="post" action="bbsDelProc.jsp" onsubmit="return pwCheck()">
+		<input type="hidden" id="bbsno" name="bbsno" value="<%= request.getParameter("bbsno")%>">
+	 	
+	 	<div class="form-group">
+		    <label for="password">비밀번호 입력</label><br>
+		    <div style="position:relative;left:470px;">
+		    <input type="password" style="width:200px;" class="form-control" id="passwd" name="passwd" required>
+	    	</div>
+	  	</div>
+	  <input type="submit" class="btn btn-danger" value="삭제">
+	</form>
 </div>
 <!-- 본문 끝 -->
 <%@ include file="../footer.jsp" %>

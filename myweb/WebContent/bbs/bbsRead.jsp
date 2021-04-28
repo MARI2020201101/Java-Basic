@@ -45,8 +45,8 @@
 	</tr>
 	</table>
 	 <input type="button" value="답변" class="btn btn-success" onclick="location.href='bbsReply.jsp?bbsno=<%=dto.getBbsno()%>'">
-	 <input type="button" value="수정" class="btn btn-warning" onclick="location.href='bbsDel.jsp?bbsno=<%=dto.getBbsno()%>'">
-     <input type="button"  value="삭제" class="btn btn-danger" onclick="location.href='bbsUpdate.jsp?bbsno=<%=dto.getBbsno()%>'">
+	 <input type="button" value="수정" class="btn btn-warning" onclick="location.href='bbsUpdate.jsp?bbsno=<%=dto.getBbsno()%>'">
+     <input type="button"  value="삭제" class="btn btn-danger" onclick="location.href='bbsDel.jsp?bbsno=<%=dto.getBbsno()%>'">
 </div>
 <%
 	}
