@@ -20,18 +20,17 @@
 		<tbody>
 	
 <%
-	
-	int recordPerPage = 5;//한페이지당 출력할 행의 개수
-    ArrayList<BbsDTO> list = dao.list3(col, word, nowPage, recordPerPage);
+    ArrayList<BbsDTO> list = dao.list2(col, word);
 	
 	int total = dao.count2(col, word);
-	if(list==null){
-		out.println("리스트 없음");
-	}else{
-		String today=Utility.getDate();
+if(list==null){
+	out.println("리스트 없음");
+}else{
+	String today=Utility.getDate();
 	
 	for(int i=0;i<list.size();i++){
 		dto=list.get(i);
+
 %>
 			<tr>
 				<td>
@@ -63,15 +62,13 @@
 			}
 		}
 %> 
-		<!-- 게시글 개수 start -->
 				<tr>
-					<td colspan="4"></td>
+				<td colspan="4"></td>
 				</tr>
 				<tr>
-					<td colspan="4"><strong>전체 게시글 개수 : </strong>&nbsp;&nbsp;<%=total %></td>
-				</tr><!-- 게시글 개수 end -->
+				<td colspan="4"><strong>전체 게시글 개수 : </strong>&nbsp;&nbsp;<%=total %></td>
+				</tr>
 		
-		<!-- 검색 start -->
 				<tr style="background-color:lightgrey;">
 					<form action="bbsList.jsp" onsubmit="return searchCheck()">
 						<td><select class="form-control" name="col" id="col" style="width:140px;left:150px;position:relative;">
@@ -90,15 +87,22 @@
 					</form>
 				</tr>
 			</tbody>
-	</table><!-- 검색 end -->
-
-<!-- 페이지네이션 start -->
-<%
-	Paging paging = new Paging();
-	out.print(paging.paging2(total, nowPage, recordPerPage, col, word, "bbsList.jsp"));
-%>
-	<!-- 페이지네이션 end -->
-	
+	</table>
+	<nav aria-label="...">
+	  <ul class="pagination">
+	    <li class="page-item disabled">
+	      <a class="page-link" href="#" tabindex="-1">Previous</a>
+	    </li>
+	    <li class="page-item"><a class="page-link" href="#">1</a></li>
+	    <li class="page-item active">
+	      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+	    </li>
+	    <li class="page-item"><a class="page-link" href="#">3</a></li>
+	    <li class="page-item">
+	      <a class="page-link" href="#">Next</a>
+	    </li>
+	  </ul>
+	</nav>
 </div>
 <!-- 본문 끝 -->
 <%@ include file="../footer.jsp" %>

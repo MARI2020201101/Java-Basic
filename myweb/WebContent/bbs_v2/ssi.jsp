@@ -15,18 +15,10 @@
 <% request.setCharacterEncoding("UTF-8");%>
 
 <%
-	//검색-----------------------------------------------------------------
+	//검색
 	String col =request.getParameter("col");
 	String word =request.getParameter("word");
 	col=Utility.checkNull(col);
 	word=Utility.checkNull(word);
-	
-	//페이지네이션-----------------------------------------------------------
-	//1) 현재페이지
-	int nowPage=1;
-	if(request.getParameter("nowPage")!=null) 
-		nowPage=Integer.parseInt(request.getParameter("nowPage"));
-	//2) 다음페이지
-	
 	
 %>

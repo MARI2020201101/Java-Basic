@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/sql/bbs.sql=EUC-KR
+encoding//src/net/utility/Paging.java=UTF-8
 encoding//src/net/utility/Utility.java=UTF-8
+encoding/<project>=UTF-8

@@ -79,7 +79,7 @@ select grpno,indent,ansno from tb_bbs where bbsno=?
 --전체 게시글 갯수 출력
 select count(bbsno) from tb_bbs
 
-[검색]
+///////////[검색]////////////
 --키워드 한개일때 검색 ex)솔데스크
 select * from tb_bbs where wname like '%솔데스크%'
 select * from tb_bbs where subject like '%솔데스크%'
@@ -89,3 +89,90 @@ select * from tb_bbs where content like '%솔데스크%'
 select * from tb_bbs 
 where wname like '%솔데스크%' 
 or subject like '%솔데스크%'
+
+
+//////////[페이지네이션]///////////
+1) 
+select wname, grpno, ansnum 
+from tb_bbs
+order by grpno desc, ansnum asc;
+2) 
+select rownum, wname, grpno, ansnum
+from tb_bbs 
+order by grpno desc, ansnum asc;
+3)
+select rownum, sub.* from (select wname, grpno, ansnum
+from tb_bbs 
+order by grpno desc, ansnum asc) sub;
+4)
+select * from (select rownum as rn , sub.* from (select wname, grpno, ansnum
+from tb_bbs 
+order by grpno desc, ansnum asc) sub) 
+where rn>=6 and rn<=10;
+
+--페이지네이션+검색
+select * from (select rownum as rn , sub.* from (select subject, wname, grpno, ansnum
+from tb_bbs 
+where wname like '%user%' 
+or subject like '%user%'
+order by grpno desc, ansnum asc) sub
+) 
+where rn>=6 and rn<=10
+
+
+--과제 : 제목과 댓글(자식글)의 갯수를 조회하시오
+	예) 대한민국 2
+		오필승코리아 5
+		오늘은 목요일 7
+		무궁화
+		select grpno from tb_bbs where grpno=bbsno group by grpno;
+select count(grpno) cnt, grpno from tb_bbs group by grpno;
+select subject from tb_bbs where grpno=bbsno;
+
+select cnt 
+from(select count(grpno) cnt, grpno from tb_bbs group by grpno) 
+where cnt>1;
+
+select bb.subject, aa.reply
+from (select grpno, (count(*)-1) as reply
+from tb_bbs
+group by grpno) aa join tb_bbs bb
+on aa.grpno=bb.grpno
+where bb.indent=0
+order by bb.grpno desc;
+
+----------------------공지사항 
+1)테이블 생성
+   create table tb_notice(
+     noticeno   number           not null  -- 일련번호
+    ,subject    varchar2(255)    not null  -- 제목
+    ,content    varchar2(4000)   not null  -- 내용
+    ,regdt      date    default  sysdate   -- 작성일
+    ,primary key(noticeno)                 -- noticeno 기본키 
+   );
+2) 일련번호 시퀀스 생성
+
+   create sequence noticeno_seq;
+----------------------------------------------
+3) JSP 작업폴더 : notice 생성
+
+
+4) Package명    : net.notice
+5) 자바빈즈 파일명
+   net.notice.NoticeDTO
+   net.notice.NoticeDAO
+2. JSP 파일
+
+1) 공지사항 입력폼   : noticeForm.jsp   
+   - 제목, 내용에 빈 문자열이 입력되지 않도록 자바스크립트 유효성 검사 추가
+
+2) 공지사항 추가     : noticeIns.jsp
+
+3) 공지사항 리스트   : noticeList.jsp 
+   -제목, 작성일 출력
+
+4) 공지사항 상세보기 : noticeRead.jsp
+
+5) 공지사항 삭제     : noticeDel.jsp
+
+6) 공지사항 수정     : noticeUpdate.jsp

@@ -51,3 +51,12 @@ function pwCheck(){
 			return false;
 		}
 	}//pwCheck() end
+function searchCheck(){
+	var word=$("#word").val().trim();
+	if(word.length<1||word==null||word.equals("")){
+		alert("검색어를 입력해 주십시요");
+		return false;
+	}else{
+		return true;
+	}
+}

@@ -6,13 +6,11 @@
 <!-- 본문 시작 bbsRead.jsp -->
 <h3>* 게시판 상세보기 *</h3>
 <p><a href="bbsForm.jsp">[글쓰기]</a></p>
-<p><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>">[글목록]</a></p>
+<p><a href="bbsList.jsp">[글목록]</a></p>
 
 <%
 	int bbsno= Integer.parseInt(request.getParameter("bbsno"));
-
 	dto = dao.read(bbsno);
-	
 	if(dto==null){
 		out.println("상세보기할 글을 불러오지 못했습니다.");	
 	}else{
