@@ -60,3 +60,13 @@ function searchCheck(){
 		return true;
 	}
 }
+function noticeCheck(){
+	var subject =$("#subject").val();
+	var content =$("#content").val();
+	console.log(subject);
+	console.log(content);
+	if(subject==null||content==null||subject.length<1||content.length<1){
+		alert("제목과 내용을 확인해 주십시요");
+		return false;
+	}else {return true;}
+}

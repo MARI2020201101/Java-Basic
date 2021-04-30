@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DBClose {//데이터베이스 자원반납 메소드들
+public class DBClose {
 	
 	public static void close(ResultSet rs, PreparedStatement pstmt, Connection con) {
 		try{if(rs!=null){rs.close();rs=null;}

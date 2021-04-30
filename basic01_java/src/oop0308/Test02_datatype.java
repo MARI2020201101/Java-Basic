@@ -14,7 +14,7 @@ public class Test02_datatype {
 		float e = 1;
 		double f = 0.1;
 		char ch = 'A';
-		char ch2 ='°¡';
+		char ch2 ='b';
 		System.out.println(e);
 		System.out.println(f);
 		System.out.println(ch);
@@ -22,10 +22,10 @@ public class Test02_datatype {
 		
 		String str= "hello";
 		
-		String name = "È«±æµ¿";
+		String name = "È«ï¿½æµ¿";
 		int kor = 80, eng = 90, mat = 100;
 		double average = (kor+eng+mat)/3;
-		System.out.println(name + "´ÔÀÇ Á¡¼ö´Â "+ average +" ÀÔ´Ï´Ù.");
+		System.out.println(name + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ "+ average +" ï¿½Ô´Ï´ï¿½.");
 		
 		
 	}

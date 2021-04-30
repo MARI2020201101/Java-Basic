@@ -68,7 +68,7 @@ public class BbsDAO {
 				}while(rs.next());	
 			}
 		}catch(Exception e) {
-			System.out.println("BBS List ½ÇÆÐ :" +e);
+			System.out.println("BBS List ERROR :" +e);
 		}finally {
 			DBClose.close(rs, pstmt, con);
 		}
@@ -100,10 +100,10 @@ public class BbsDAO {
 					dto.setAnsnum(rs.getInt("ansnum"));
 					dto.setIp(rs.getString("ip"));				
 			}else {
-				System.out.println("READ µ¥ÀÌÅÍ ¾øÀ½");
+				System.out.println("READ ERROR");
 			}
 		}catch(Exception e) {
-			System.out.println("BBS Read ½ÇÆÐ : "+e);
+			System.out.println("BBS Read ERROR : "+e);
 		}finally {
 			DBClose.close(rs, pstmt, con);
 		}
@@ -122,7 +122,7 @@ public class BbsDAO {
 			pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("BBS UPDATE COUNT ½ÇÆÐ : "+e);
+			System.out.println("BBS UPDATE COUNT ERROR : "+e);
 		}finally {
 			DBClose.close(pstmt, con);
 		}
@@ -145,7 +145,7 @@ public class BbsDAO {
 			cnt=pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("BBS UPDATE COUNT ½ÇÆÐ : "+e);
+			System.out.println("BBS UPDATE COUNT ERROR : "+e);
 		}finally {
 			DBClose.close(pstmt, con);
 		}
@@ -165,7 +165,7 @@ public class BbsDAO {
 			cnt = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("BBS DELETE ½ÇÆÐ : "+e);
+			System.out.println("BBS DELETE ERROR : "+e);
 		}finally {
 			DBClose.close(pstmt, con);
 		}
@@ -176,8 +176,7 @@ public class BbsDAO {
 		int cnt=0;
 		try {
 			con=dbopen.getConnection();
-			
-			//1) ºÎ¸ð±Û Á¤º¸ °¡Á®¿À±â(select)
+
 			StringBuilder sb = new StringBuilder();
 			int grpno=0;
 			int indent=0;
@@ -188,22 +187,20 @@ public class BbsDAO {
 			rs=pstmt.executeQuery();
 			
 			if(rs.next()) {
-				//±×·ì³Ñ¹ö : °°Àº Á¶»óÀ» °¡Áø ±×·ì³¢¸® °°Àº ±×·ì³Ñ¹ö °øÀ¯
+			
 				grpno=rs.getInt("grpno");
 				
-				//µé¿©¾²±â : Á÷°èÁ¶»óÀÇ indent +1, °°Àº ±×·ì ³»ÀÇ ¼­¿­ Á¤¸®
+				
 				indent=rs.getInt("indent")+1;
 				
-				//±Û¼ø¼­ : Á÷°è Á¶»óÀÇ ansnum +1, ±×·ì ³»ÀÇ ¼ø¼­Á¤¸® & ÀçÁ¤µ·
+				
 				ansnum=rs.getInt("ansnum")+1;
 			}else {
-				System.out.println("ºÎ¸ð±Û ºÒ·¯¿À±â ½ÇÆÐ");
+				System.out.println("ERROR");
 			}
-			
-			//À§¿¡¼­ ¾´ string»èÁ¦. »õ·Î¿î sqlÀÛ¼ºÀ§ÇÔ
+			//ìŠ¤íŠ¸ë§ë¹Œë” ë¦¬ì…‹
 			sb.delete(0, sb.length());
 			
-			//±Û¼ø¼­ ÀçÁ¶Á¤
 			sb.append("	UPDATE tb_bbs SET ansnum=ansnum+1");
 			sb.append("	WHERE ansnum>=? AND grpno=?");
 			pstmt = con.prepareStatement(sb.toString());
@@ -211,7 +208,7 @@ public class BbsDAO {
 			pstmt.setInt(2,grpno);
 			rs=pstmt.executeQuery();
 			
-			//reply ³Ö±â
+			//reply 
 			sb.delete(0, sb.length());
 			sb.append(" INSERT INTO tb_bbs(bbsno, wname, subject, content, passwd, ip, grpno, ansnum, indent)");
 			sb.append(" VALUES(bbs_seq.nextval,?,?,?,?,?,?,?,?)");
@@ -246,7 +243,7 @@ public class BbsDAO {
 				total=Integer.parseInt(rs.getString(1));
 			}
 		}catch(Exception e) {
-			System.out.println("BBS COUNT ½ÇÆÐ : "+e);
+			System.out.println("BBS COUNT ERROR: "+e);
 		}finally {
 			DBClose.close(rs, pstmt, con);
 		}
@@ -262,7 +259,6 @@ public class BbsDAO {
 			sb.append("	SELECT bbsno, wname, subject, readcnt, regdt, indent");
 			sb.append(" FROM tb_bbs");
 			
-			//°Ë»ö¾î°¡ ÀÖÀ» °æ¿ì
 			if(word.length()>=1) {
 				String search="";
 				if(col.equals("wname")) {
@@ -294,7 +290,7 @@ public class BbsDAO {
 				}while(rs.next());	
 			}
 		}catch(Exception e) {
-			System.out.println("BBS List ½ÇÆÐ :" +e);
+			System.out.println("BBS List ERROR :" +e);
 		}finally {
 			DBClose.close(rs, pstmt, con);
 		}
@@ -307,7 +303,7 @@ public class BbsDAO {
 			StringBuilder sb = new StringBuilder();
 			
 			sb.append("SELECT count(bbsno) FROM tb_bbs");	
-			//°Ë»ö¾î°¡ ÀÖÀ» °æ¿ì
+		
 			if(word.length()>=1) {
 				String search="";
 				if(col.equals("wname")) {
@@ -328,7 +324,7 @@ public class BbsDAO {
 				total=Integer.parseInt(rs.getString(1));
 			}
 		}catch(Exception e) {
-			System.out.println("BBS COUNT ½ÇÆÐ : "+e);
+			System.out.println("BBS COUNT ERROR : "+e);
 		}finally {
 			DBClose.close(rs, pstmt, con);
 		}
@@ -338,7 +334,6 @@ public class BbsDAO {
 	public ArrayList<BbsDTO> list3(String col, String word, int nowPage, int recordPerPage){
 	    ArrayList<BbsDTO> list=null;
 	    
-	    // ÆäÀÌÁö´ç Ãâ·ÂÇÒ ·¹ÄÚµå °¹¼ö (10°³¸¦ ±âÁØ)
 	    // 1 page : WHERE r>=1 AND r<=10
 	    // 2 page : WHERE r>=11 AND r<=20
 	    // 3 page : WHERE r>=21 AND r<=30
@@ -349,9 +344,9 @@ public class BbsDAO {
 	      con=dbopen.getConnection();
 	      StringBuilder sb=new StringBuilder();
 	      
-	      word = word.trim(); //°Ë»ö¾îÀÇ ÁÂ¿ì °ø¹é Á¦°Å
+	      word = word.trim(); 
 	      
-	      if(word.length()==0) { //°Ë»öÀ» ÇÏÁö ¾Ê´Â °æ¿ì
+	      if(word.length()==0) { 
 	    	  sb.append(" SELECT bbsno,subject,wname,readcnt,indent,regdt, r");
 	    	  sb.append(" FROM( SELECT bbsno,subject,wname,readcnt,indent,regdt, rownum as r");
 	    	  sb.append("       FROM ( SELECT bbsno,subject,wname,readcnt,indent,regdt");
@@ -363,7 +358,6 @@ public class BbsDAO {
 	        
 	      } else {
 	        
-	        //°Ë»öÀ» ÇÏ´Â °æ¿ì
 	    	  sb.append(" SELECT bbsno,subject,wname,readcnt,indent,regdt, r");
 	    	  sb.append(" FROM( SELECT bbsno,subject,wname,readcnt,indent,regdt, rownum as r");
 	    	  sb.append("       FROM ( SELECT bbsno,subject,wname,readcnt,indent,regdt");
@@ -406,7 +400,7 @@ public class BbsDAO {
 	      }//if end
 	      
 	    }catch(Exception e) {
-	      System.out.println("¸ñ·Ï ÆäÀÌÂ¡ ½ÇÆÐ: "+e);
+	      System.out.println("ERROR"+e);
 	    }finally {
 	      DBClose.close(rs, pstmt, con);
 	    }   

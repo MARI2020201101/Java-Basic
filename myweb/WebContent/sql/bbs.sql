@@ -153,6 +153,10 @@ order by bb.grpno desc;
 2) 일련번호 시퀀스 생성
 
    create sequence noticeno_seq;
+   
+3) 테스트 데이터 insert
+	insert into tb_notice(noticeno,subject,content) 
+	values(noticeno_seq.nextval,'테스트1','테스트1');
 ----------------------------------------------
 3) JSP 작업폴더 : notice 생성
 
@@ -161,6 +165,7 @@ order by bb.grpno desc;
 5) 자바빈즈 파일명
    net.notice.NoticeDTO
    net.notice.NoticeDAO
+   
 2. JSP 파일
 
 1) 공지사항 입력폼   : noticeForm.jsp   
@@ -176,3 +181,5 @@ order by bb.grpno desc;
 5) 공지사항 삭제     : noticeDel.jsp
 
 6) 공지사항 수정     : noticeUpdate.jsp
+------------------------
+SELECT noticeno, subject, content, regdt FROM tb_notice ORDER BY noticeno desc

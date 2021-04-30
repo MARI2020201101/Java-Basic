@@ -8,9 +8,12 @@
 <%@ page import="java.util.*" %>
 <%@ page import="net.utility.*" %>
 <%@ page import="net.bbs.*" %>
+<%@ page import="net.notice.*" %>
 
 <jsp:useBean id="dao" class="net.bbs.BbsDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dto" class="net.bbs.BbsDTO" scope="page"></jsp:useBean>
+<jsp:useBean id="noticeDao" class="net.notice.NoticeDAO" scope="page"></jsp:useBean>
+<jsp:useBean id="noticeDto" class="net.notice.NoticeDTO" scope="page"></jsp:useBean>
 
 <% request.setCharacterEncoding("UTF-8");%>
 

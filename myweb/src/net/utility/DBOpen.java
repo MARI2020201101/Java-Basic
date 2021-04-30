@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBOpen {
-	//µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¸Þ¼Òµå
+
 	public Connection getConnection() {
 		
 		Connection con=null;
@@ -19,7 +19,7 @@ public class DBOpen {
 
 			con = DriverManager.getConnection(url,user,password);
 		}catch(Exception e){
-			System.out.println("¿À¶óÅ¬DB ¿¬°á½ÇÆÐ : "+ e);
+			System.out.println("ï¿½ï¿½ï¿½ï¿½Å¬DB ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : "+ e);
 		}
 		
 		return con;

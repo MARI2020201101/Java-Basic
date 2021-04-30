@@ -127,7 +127,7 @@ public class BbsDTO {
 		this.ip = ip;
 	}
 
-	//자바의 최고조상 Object의 메소드 오버라이드
+	
 	@Override
 	public String toString() {
 		return "BbsDTO [bbsno=" + bbsno + ", wname=" + wname + ", subject=" + subject + ", content=" + content
