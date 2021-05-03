@@ -70,3 +70,21 @@ function noticeCheck(){
 		return false;
 	}else {return true;}
 }
+
+function loginCheck(){
+	var id=$("#id");
+	var passwd=$("#passwd");
+	console.log(id);
+	console.log(passwd);
+	if(id.val().length<5||id.val().length>10){
+		alert("아이디를 5~10자 이내로 입력해주십시요");
+		id.focus();
+		return false;
+	}
+	if(passwd.val().length<5||passwd.val().length>10){
+		alert("비밀번호를 5~10자 이내로 입력해주십시요");
+		passwd.focus();
+		return false;
+	}
+	else{return true;}
+}//loginCheck()end

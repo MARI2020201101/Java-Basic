@@ -76,10 +76,10 @@
 				<div style="background-color:lightgrey;height:50px;padding-top:8px;">
 					<form action="bbsList.jsp" onsubmit="return searchCheck()">
 						<div class="row">
-							<div class="col-sm-1">
+							<div class="col-sm-2">
 							</div>
-							<div class="col-sm-3">
-								<select class="form-control" name="col" id="col" style="width:140px;left:140px;position:relative;">
+							<div class="col-sm-2">
+								<select class="form-control" name="col" id="col" >
 									<option value="subject">제목</option>
 									<option value="content">내용</option>
 									<option value="wname">작성자</option>
@@ -87,22 +87,23 @@
 								</select>
 							</div>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="word" id="word" style="width:450px;">
+								<input type="text" class="form-control" name="word" id="word" >
 							</div>
-							<div class="col-sm-3">
-								<input type="submit" class="btn btn-primary" value="검색하기" style="width:100px;left:0px;position:relative;">
+							<div class="col-sm-2">
+								<input type="submit" class="btn btn-primary" value="검색하기" >
 							</div>
-							<div class="col-sm-1">
+							<div class="col-sm-2">
 							</div>
 						</div>
 					</form>
 				</div><!-- 검색 end -->
 <!-- 페이지네이션 start -->
+
 <%
 	Paging paging = new Paging();
 	out.print(paging.paging2(total, nowPage, recordPerPage, col, word, "bbsList.jsp"));
 %><!-- 페이지네이션 end -->
-	
+
 </div>
 <!-- 본문 끝 -->
 <%@ include file="../footer.jsp" %>

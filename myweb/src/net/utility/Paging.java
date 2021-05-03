@@ -76,7 +76,7 @@ public class Paging {
     StringBuffer str = new StringBuffer();
     
     str.append("<style>");
-    str.append("  #paging {text-align: center; margin-top: 5px; font-size: 1em;}");
+    str.append("  #paging {text-align: center; margin-top: 5px; font-size: 1em; position:relative;}");
     str.append("  #paging A:link {text-decoration:none; color:black; font-size: 1em;}");
     str.append("  #paging A:hover{text-decoration:none; background-color: #CCCCCC; color:black; font-size: 1em;}");
     str.append("  #paging A:visited {text-decoration:none;color:black; font-size: 1em;}");

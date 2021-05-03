@@ -9,11 +9,14 @@
 <%@ page import="net.utility.*" %>
 <%@ page import="net.bbs.*" %>
 <%@ page import="net.notice.*" %>
+<%@ page import="net.member.*" %>
 
 <jsp:useBean id="dao" class="net.bbs.BbsDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dto" class="net.bbs.BbsDTO" scope="page"></jsp:useBean>
 <jsp:useBean id="noticeDao" class="net.notice.NoticeDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="noticeDto" class="net.notice.NoticeDTO" scope="page"></jsp:useBean>
+<jsp:useBean id="memberDao" class="net.member.MemberDAO" scope="page"></jsp:useBean>
+<jsp:useBean id="memberDto" class="net.member.MemberDTO" scope="page"></jsp:useBean>
 
 <% request.setCharacterEncoding("UTF-8");%>
 
