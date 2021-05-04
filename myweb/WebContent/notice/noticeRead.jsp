@@ -2,10 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../bbs/ssi.jsp" %>
 <%@ include file="../header.jsp" %>
+<%@ include file="../member/auth.jsp" %>
 
 <!-- 본문 시작 noticeRead.jsp -->
 <h3>* 공지사항 상세보기 *</h3>
+<%
+if(s_mlevel.equals("A1")){
+%>
 <p><a href="noticeForm.jsp">[공지사항 등록]</a></p>
+<% 	
+}
+%> 
 <p><a href="noticeList.jsp?word=<%=word%>">[공지사항 목록]</a></p>
 
 <%
@@ -34,9 +41,16 @@
 		<td><input type="text" class="form-control readbox-color" readonly value="<%=noticeDto.getRegdt() %>"></td>
 	</tr>
 	</table>
+<%
+if(s_mlevel.equals("A1")){
+%>
 	 <input type="button" value="수정" class="btn btn-warning" onclick="location.href='noticeUpdate.jsp?noticeno=<%=noticeDto.getNoticeno()%>'">
      <input type="button"  value="삭제" class="btn btn-danger" onclick="location.href='noticeDel.jsp?noticeno=<%=noticeDto.getNoticeno()%>'">
 </div>
+<% 	
+}
+%>      
+   
 <%
 	}
 %>

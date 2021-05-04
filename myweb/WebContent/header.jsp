@@ -1,5 +1,7 @@
+<%@page import="net.utility.Utility"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -34,6 +36,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<%=request.getContextPath()%>/bbs/bbsList.jsp">게시판</a></li>
         <li><a href="<%=request.getContextPath()%>/notice/noticeList.jsp">공지사항</a></li>
+      
         <li><a href="<%=request.getContextPath()%>/member/loginForm.jsp">로그인</a></li>
         <li><a href="#">포토갤러리</a></li>
         <li><a href="#">메일보내기</a></li>

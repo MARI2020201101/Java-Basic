@@ -2,10 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../bbs/ssi.jsp" %>
 <%@ include file="../header.jsp" %>
+<%@ include file="../member/auth.jsp" %>
 
 <!-- 본문 시작 noticeList.jsp -->
 <h3>* 공지사항 목록 *</h3>
+<%
+if(s_mlevel.equals("A1")){
+%>
 <p><a href="noticeForm.jsp">[공지사항 등록]</a></p>
+<% 	
+}
+%> 
 <div class="container">
 <br>
 	<table class="table table-hover text-left">

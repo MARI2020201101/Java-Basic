@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	showTime();
 });
-$( window ).unload(function() {
-  clearTimeout(timer);
+$( window ).on('beforeunload',function() {
+  window.clearTimeout(timer);
 });
 var timer;
 function showTime(){
@@ -25,7 +25,7 @@ function showTime(){
             day="0"+day.toString();
         }
         var tempTime = time.substring(0,2);
-        console.log(tempTime);
+        
         if(parseInt(tempTime)>12){      
             tempTime=(parseInt(tempTime)-12);
             if(tempTime<10){
@@ -40,7 +40,7 @@ function showTime(){
             time=time.substring(2);
         }
         var str = year + ". "+month+". "+day+ " ("+yoyil+") "+tempTime+time;
-        console.log(str);
+        
         document.getElementById("clock").innerHTML=str;
         timer = setTimeout(showTime,1000);    
     }/**

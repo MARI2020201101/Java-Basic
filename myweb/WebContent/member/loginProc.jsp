@@ -2,11 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../bbs/ssi.jsp" %>
 <%@ include file="../header.jsp" %>
-
+<%@ include file="auth.jsp" %>
 <%
 
-memberDto.setId(request.getParameter("id"));
-memberDto.setPasswd(request.getParameter("passwd"));
+String id =request.getParameter("id");
+String passwd= request.getParameter("passwd");
+memberDto.setId(id);
+memberDto.setPasswd(passwd);
 String mlevel=memberDao.loginProc(memberDto);
 
 if(mlevel.equals("")||mlevel==null){
@@ -16,10 +18,22 @@ if(mlevel.equals("")||mlevel==null){
 	out.print("</script>");
 }
 else{
-	out.println("<script>");
-	out.print("alert('로그인 성공!');");
-	out.print("location.href='../index.jsp'");
-	out.println("</script>");
+	session.setAttribute("s_id", id);
+	session.setAttribute("s_passwd", passwd);
+	session.setAttribute("s_mlevel", mlevel);
+	String c_id=Utility.checkNull(request.getParameter("c_id"));
+	Cookie cookie=null;
+	if(c_id.equals("SAVE")){
+		cookie=new Cookie("c_id",id);
+		cookie.setMaxAge(60*60*24*30);
+		
+	}else{
+		cookie=new Cookie("c_id","");
+		cookie.setMaxAge(0);
+	}
+	response.addCookie(cookie);
+	String root=Utility.getRoot();
+	response.sendRedirect(root+"/index.jsp");
 }
 
 %>

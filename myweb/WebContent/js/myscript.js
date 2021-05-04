@@ -88,3 +88,52 @@ function loginCheck(){
 	}
 	else{return true;}
 }//loginCheck()end
+
+function idCheck(){
+	window.open("idCheckForm.jsp", "idwin", "width=450, height=300");
+}//idCheck() end
+
+function emailCheck(){
+	window.open("emailCheckForm.jsp", "emailwin", "width=450, height=300");	
+}//emailCheck() end
+
+function memberCheck(){
+	var id = $("#id").val().trim();
+	if(id.length<5||id.length>10){
+		alert("아이디는 5자이상 10자 이내입니다.");
+		$("#id").focus();
+		return false;
+	}
+	var passwd = $("#passwd").val().trim();
+		if(passwd.length<5||passwd.length>10){
+		alert("비밀번호는 5자이상 10자 이내입니다.");
+		$("#passwd").focus();
+		return false;
+	}
+	var repasswd = $("#repasswd").val().trim();
+	if(passwd!=repasswd){
+		alert("비밀번호 확인을 진행해 주십시요.");
+		$("#repasswd").focus();
+		return false;
+	}
+	var mname = $("#mname").val().trim();
+		if(mname.length<1||mname.length>5){
+		alert("이름은 1자이상 5자 이내입니다.");
+		$("#mname").focus();
+		return false;
+	}
+	var email = $("#email").val().trim();
+		if(email.length<5){
+		alert("이메일 확인을 해주십시요");
+		$("#email").focus();
+		return false;
+	}
+	var job = $("#job").val();
+		if(job.length<1){
+		alert("직업선택을 해주십시요");
+		$("#job").focus();
+		return false;
+	}
+	
+	return true;
+}//memberCheck()end

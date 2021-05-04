@@ -30,3 +30,5 @@ and mlevel in('A1', 'B1', 'C1', 'D1')
 
 --아이디 중복확인
 select count(id) as cnt from member where id=?
+
+--회원등급이 A이상인 사람만 게시판 글 삭제가능
