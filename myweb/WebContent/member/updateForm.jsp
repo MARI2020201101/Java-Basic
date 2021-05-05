@@ -17,7 +17,7 @@
 
 <!-- 본문 시작 updateForm.jsp-->
 <div class="container-2">
-<h3>* 회 원 가 입 *</h3>
+<h3>* 회원 정보 수정 *</h3>
 
 <form name="memfrm" id="memfrm" method="post" style="text-align:left;" action="updateProc.jsp" onsubmit="return memberCheck()">
 <span style="color:red; font-weight: bold">* 필수입력</span>
@@ -70,20 +70,27 @@
 <tr>  
   <th>*직업</th>
   <td><select name="job"  id="job" class="form-control" style="width:200px;">
-          <option value="0" <%if(job=="0") out.print(" selected"); %>>선택하세요.</option>
-          <option value="A01" <%if(job=="A01") out.print(" selected"); %>>회사원</option>
-          <option value="A02" <%if(job=="A02") out.print(" selected"); %> selected>전산관련직</option>
-          <option value="A03" <%if(job=="A03") out.print(" selected"); %>>학생</option>
-          <option value="A04" <%if(job=="A04") out.print(" selected"); %>>주부</option>
-          <option value="A05"<%if(job=="A05") out.print(" selected"); %>>기타</option>
+          <option value="0" >선택하세요.</option>
+          <option value="A01" >회사원</option>
+          <option value="A02" >전산관련직</option>
+          <option value="A03" >학생</option>
+          <option value="A04" >주부</option>
+          <option value="A05">기타</option>
         </select>
   </td>
   <input type="hidden" name="selectedJob" id="selectedJob" value="<%=job%>">
 </tr>
+
 <script>
-//filte로 value 같은것 찾고 append
-
-
+//option에 selected태그 붙임
+$(document).ready(function(){
+	$("#job option").each(
+			function(index){
+				if($(this).val()==$("#selectedJob").val())
+					$(this).attr("selected","selected");
+				});
+	
+});
 </script>
 <tr style="text-align:center">
     <td colspan="2">
