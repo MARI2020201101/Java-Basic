@@ -5,7 +5,7 @@
 <!-- 본문 시작 bbsForm.jsp -->
 <h3>* 글쓰기 *</h3>
 <p><a href="bbsList.jsp">[글목록]</a></p>
-<div class="container">
+<div class="container-2">
 <form method="post" action="bbsReplyProc.jsp" onsubmit="return bbsCheck()">
 	<input type="hidden" name="bbsno" value="<%= request.getParameter("bbsno")%>">
 	<table class="table">
@@ -28,7 +28,7 @@
 	<tr>
 	    <td colspan="2" align="center">
 	       <input type="submit" value="쓰기" class="btn btn-success">
-	       <input type="reset"  value="취소" class="btn btn-danger">
+	       <input type="reset"  value="취소" onclick="history.back();" class="btn btn-danger">
 	    </td>
 	</table>
 </form>

@@ -20,7 +20,7 @@
 		dao.incrementCnt(bbsno);
 
 %>
-<div class="container">
+<div class="container-2">
 	<table class="table">
 	<tr>
 	   <th>작성자</th>

@@ -7,7 +7,7 @@
 <h3>* 글 삭제 *</h3>
 <p><a href="bbsList.jsp">[글목록]</a></p>
 <br>
-<div class="container">
+<div class="container-2">
 <div class="row">
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">

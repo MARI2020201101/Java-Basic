@@ -8,7 +8,7 @@
 <a href="javascript:history.back()">[뒤로 가기]</a>
 <br>
 <br>
-<div class="container">
+<div class="container-2">
 <div class="row">
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">

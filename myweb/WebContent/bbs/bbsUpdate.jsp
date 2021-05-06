@@ -17,7 +17,7 @@
 		dao.incrementCnt(bbsno);
 
 %>
-<div class="container">
+<div class="container-2">
 <form action="bbsUpdateProc.jsp" method="post" onsubmit="return bbsCheck()">
 	<input type="hidden" name="bbsno" value="<%= request.getParameter("bbsno")%>">
 	<table class="table">

@@ -52,7 +52,7 @@ if(s_id.equals("guest")||s_passwd.equals("guest")||s_mlevel.equals("guest")){
 				</div>
 				<div class="row">
 					<a href="agreement.jsp">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="findID.jsp">아이디 / 비밀번호 찾기</a>
+					<a href="findID.jsp">비밀번호 찾기</a>
 				</div>
 			</div>
 			<div class="col-sm-4" ></div>	
@@ -74,8 +74,8 @@ if(s_id.equals("guest")||s_passwd.equals("guest")||s_mlevel.equals("guest")){
 	
 	<div class="col-sm-4" ></div>	
 		<div style="border:1px solid #e7e7e7;border-radius: 10px;" class="col-sm-4" >
-			<a href="updateForm.jsp?id=<%=s_id%>">회원정보 수정</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="unregisterForm.jsp?id=<%=s_id%>">회원 탈퇴</a>
+			<a href="updateForm.jsp">회원정보 수정</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="unregisterForm.jsp">회원 탈퇴</a>
 		</div>
 		<div class="col-sm-4" ></div>	
 </div>

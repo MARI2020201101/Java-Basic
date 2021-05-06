@@ -207,4 +207,25 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
+	
+	public int findPasswd(MemberDTO dto) {
+		int cnt=0;
+		try {
+			con = dbopen.getConnection();
+			sb.append(" UPDATE member SET passwd=? WHERE email=? and id=? ");
+			
+			pstmt = con.prepareStatement(sb.toString());
+			pstmt.setString(1,dto.getPasswd());
+			pstmt.setString(2,dto.getEmail());
+			pstmt.setString(3,dto.getId());
+			
+			cnt =pstmt.executeUpdate();
+
+		}catch(Exception e) {
+			System.out.println("MEMBER UPDATE PW ERROR : "+e);
+		}finally {
+			DBClose.close(pstmt, con);
+		}
+		return cnt;
+	}
 }

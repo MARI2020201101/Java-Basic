@@ -3,6 +3,7 @@
 <%@ include file="../header.jsp" %>
 
 <!-- 본문 시작 bbsForm.jsp -->
+<div class="container-2">
 <h3>* 글쓰기 *</h3>
 <p><a href="bbsList.jsp">[글목록]</a></p>
 <form name="bbsfrm" id="bbsfrm" method="post" action="bbsIns.jsp" onsubmit="return bbsCheck()">
@@ -26,10 +27,11 @@
 <tr>
     <td colspan="2" align="center">
        <input type="submit" value="쓰기" class="btn btn-success">
-       <input type="reset"  value="취소" class="btn btn-danger">
+       <input type="reset"  onclick="history.back();" value="취소" class="btn btn-danger">
     </td>
 </table>
 </form>
+</div>
 <!-- 본문 끝 -->
 
 <%@ include file="../footer.jsp" %>

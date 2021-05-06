@@ -44,4 +44,7 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="net.utility.DBOpen"/>
+    <fullyQualifiedTypeName name="java.net.Authenticator"/>
+    <fullyQualifiedTypeName name="net.utility.MyAuthenticator"/>
+    <fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
 </qualifiedTypeNameHistroy>

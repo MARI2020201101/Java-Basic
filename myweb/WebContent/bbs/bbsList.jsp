@@ -6,7 +6,7 @@
 <!-- 본문 시작 bbsList.jsp -->
 <h3>* 글 목록 *</h3>
 <p><a href="bbsForm.jsp">[글쓰기]</a></p>
-<div class="container">
+<div class="container-2">
 <br>
 	<table class="table table-hover text-left">
 		<thead>

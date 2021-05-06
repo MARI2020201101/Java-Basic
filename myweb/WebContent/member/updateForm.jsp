@@ -1,24 +1,28 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="../header.jsp"%>
 <%@ include file="../bbs/ssi.jsp" %>
-<%
-	String id = request.getParameter("id");
-	memberDto=memberDao.select(id);
-	String passwd=memberDto.getPasswd();
-	String mname=memberDto.getMname();
-	String email=memberDto.getEmail();
-	String tel=memberDto.getTel();
-	String zipcode=memberDto.getZipcode();
-	String address1=memberDto.getAddress1();
-	String address2=memberDto.getAddress2();
-	String job=memberDto.getJob();
-
-%>
 
 <!-- 본문 시작 updateForm.jsp-->
 <div class="container-2">
 <h3>* 회원 정보 수정 *</h3>
-
+<%
+	String id = (String)session.getAttribute("s_id");
+	memberDto=memberDao.select(id);
+	
+	if(memberDto==null){
+		out.print("<p>로그인 시간이 초과되었습니다.</p>");
+		out.print("<p>다시 로그인 해주시기 바랍니다.</p>");
+		out.println("<p><a href='loginForm.jsp'>[로그인 페이지로]</a></p>");
+	}else{
+		String passwd=memberDto.getPasswd();
+		String mname=memberDto.getMname();
+		String email=memberDto.getEmail();
+		String tel=memberDto.getTel();
+		String zipcode=memberDto.getZipcode();
+		String address1=memberDto.getAddress1();
+		String address2=memberDto.getAddress2();
+		String job=memberDto.getJob();
+%>
 <form name="memfrm" id="memfrm" method="post" style="text-align:left;" action="updateProc.jsp" onsubmit="return memberCheck()">
 <span style="color:red; font-weight: bold">* 필수입력</span>
 <br>
@@ -95,11 +99,10 @@ $(document).ready(function(){
 <tr style="text-align:center">
     <td colspan="2">
         <input type="submit" value="수정"  class="btn btn-primary"/>
-        <input type="reset"  value="취소"  class="btn btn-primary"/>
+        <input type="reset"  onclick="history.back();" value="취소"  class="btn btn-primary" />
     </td>
 </tr>
 </table>
-
 
 <!-- ----- DAUM 우편번호 API 시작 ----- -->
 <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 110px;position:relative">
@@ -171,5 +174,8 @@ $(document).ready(function(){
 
 </form>
 </div>
+<%
+	}
+%>
 <!-- 본문 끝 -->           
 <%@ include file="../footer.jsp"%>

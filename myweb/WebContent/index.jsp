@@ -35,7 +35,7 @@
         <li><a href="notice/noticeList.jsp">공지사항</a></li>
         <li><a href="member/loginForm.jsp">로그인</a></li>
         <li><a href="#">포토갤러리</a></li>
-        <li><a href="#">메일보내기</a></li>
+        <li><a href="mail/mailForm.jsp">메일보내기</a></li>
       </ul>
     </div>
   </div>

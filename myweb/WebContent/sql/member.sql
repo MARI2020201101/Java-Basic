@@ -32,3 +32,5 @@ and mlevel in('A1', 'B1', 'C1', 'D1')
 select count(id) as cnt from member where id=?
 
 --회원등급이 A이상인 사람만 게시판 글 삭제가능
+--회원 이메일/아이디 찾기
+update member set passwd=? where email=? and id=?
