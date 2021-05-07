@@ -208,24 +208,35 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public int findPasswd(MemberDTO dto) {
-		int cnt=0;
+	public String findPasswd(MemberDTO dto) {
+		String tempId ="";
 		try {
 			con = dbopen.getConnection();
-			sb.append(" UPDATE member SET passwd=? WHERE email=? and id=? ");
+			sb.append(" SELECT id FROM member WHERE email=? and mname=?");
+			pstmt = con.prepareStatement(sb.toString());
+			pstmt.setString(1,dto.getEmail());
+			pstmt.setString(2,dto.getMname());
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				tempId= rs.getString("id");
+			}
+			
+			sb.delete(0, sb.length());
+			
+			sb.append(" UPDATE member SET passwd=? WHERE email=? and mname=? ");
 			
 			pstmt = con.prepareStatement(sb.toString());
 			pstmt.setString(1,dto.getPasswd());
 			pstmt.setString(2,dto.getEmail());
-			pstmt.setString(3,dto.getId());
+			pstmt.setString(3,dto.getMname());
 			
-			cnt =pstmt.executeUpdate();
+			pstmt.executeUpdate();
 
 		}catch(Exception e) {
 			System.out.println("MEMBER UPDATE PW ERROR : "+e);
 		}finally {
-			DBClose.close(pstmt, con);
+			DBClose.close(rs, pstmt, con);
 		}
-		return cnt;
+		return tempId;
 	}
 }

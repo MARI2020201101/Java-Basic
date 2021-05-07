@@ -52,7 +52,7 @@ if(s_id.equals("guest")||s_passwd.equals("guest")||s_mlevel.equals("guest")){
 				</div>
 				<div class="row">
 					<a href="agreement.jsp">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="findID.jsp">비밀번호 찾기</a>
+					<a href="findID.jsp">아이디 / 비밀번호 찾기</a>
 				</div>
 			</div>
 			<div class="col-sm-4" ></div>	

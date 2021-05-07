@@ -8,8 +8,8 @@
 <div class="row">
 			<div class="col-sm-4"></div>
 			<div class="form-group col-sm-4">
-				<label>아이디</label> 
-				<input type="text" class="form-control" id="id" name="id" placeholder="Enter id" required>
+				<label>이름</label> 
+				<input type="text" class="form-control" id="mname" name="mname" placeholder="Enter name" required>
 			</div>
 			<div class="col-sm-4"></div>
 		</div>

@@ -47,4 +47,6 @@
     <fullyQualifiedTypeName name="java.net.Authenticator"/>
     <fullyQualifiedTypeName name="net.utility.MyAuthenticator"/>
     <fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
+    <fullyQualifiedTypeName name="javax.mail.Authenticator"/>
+    <fullyQualifiedTypeName name="javax.mail.PasswordAuthentication"/>
 </qualifiedTypeNameHistroy>
