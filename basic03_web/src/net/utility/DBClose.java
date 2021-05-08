@@ -4,24 +4,36 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DBClose {//µ•¿Ã≈Õ∫£¿ÃΩ∫ ¿⁄ø¯π›≥≥ ∏ﬁº“µÂµÈ
-	
-	public static void close(ResultSet rs, PreparedStatement pstmt, Connection con) {
-		try{if(rs!=null){rs.close();rs=null;}
-		}catch(Exception e){}
-		try{if(pstmt!=null){pstmt.close();pstmt=null;}
-		}catch(Exception e){}
-		try{if(con!=null){con.close();con=null;}
-		}catch(Exception e){}
-	}
-	public static void close(PreparedStatement pstmt, Connection con) {
-		try{if(pstmt!=null){pstmt.close();pstmt=null;}
-		}catch(Exception e){}
-		try{if(con!=null){con.close();con=null;}
-		}catch(Exception e){}
-	}
-	public static void close(Connection con) {
-		try{if(con!=null){con.close();con=null;}
-		}catch(Exception e){}
-	}
-}
+public class DBClose { //DBÏó∞Í≤∞ ÏûêÏõê Î∞òÎÇ©
+    
+    public static void close(Connection con) {      
+        try{
+            if(con != null){ con.close(); con=null; }
+        }catch(Exception e){}
+    }//end
+
+    public static void close(Connection con, PreparedStatement pstmt) {        
+        try{
+            if(pstmt != null){ pstmt.close(); pstmt=null; }
+        }catch(Exception e){}
+      
+        try{
+            if(con != null){ con.close(); con=null; }
+        }catch(Exception e){}
+    }//end
+    
+    public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
+        try{
+            if(rs != null){ rs.close(); rs=null; }
+        }catch(Exception e){}
+        
+        try{
+            if(pstmt != null){ pstmt.close(); pstmt=null; }
+        }catch(Exception e){}
+      
+        try{
+            if(con != null){ con.close(); con=null; }
+        }catch(Exception e){}
+    }//end
+    
+}//class end
