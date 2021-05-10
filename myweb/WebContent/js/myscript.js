@@ -136,4 +136,8 @@ function memberCheck(){
 	}
 	
 	return true;
-}//memberCheck()end
+}//memberCheck() end
+
+function pdsCheck(){
+	
+}//pdsCheck() end
