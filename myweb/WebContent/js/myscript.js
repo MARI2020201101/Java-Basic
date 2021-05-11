@@ -139,5 +139,53 @@ function memberCheck(){
 }//memberCheck() end
 
 function pdsCheck(){
-	
+	//1)이름
+	var wname = $("#wname").val().trim();
+		if(wname.length<2){
+		alert("이름은 2자이상 이어야 합니다.");
+		$("#wname").focus();
+		return false;
+		}
+		
+	//2)제목
+	var subject = $("#subject").val().trim();
+		if(subject.length<2){
+		alert("제목은 두글자 이상이어야 합니다.");
+		$("#subject").focus();
+		return false;
+		}
+		
+	//3)비밀번호
+	var passwd = $("#passwd").val().trim();
+		if(passwd.length<4||isNaN(passwd)){
+		alert("비밀번호는 네글자 이상 숫자이어야 합니다.");
+		$("#passwd").focus();
+		return false;
+	}
+	//4)첨부파일 유효성 검사
+	var filename = $("#filename").val().trim();
+	var $filename =$("#filename");
+	var filesize = $filename[0].files[0].size;
+	console.log($filename);
+	console.log($filename[0].files[0].size);
+	console.log($filename[0].files[0].type);
+	console.log(filesize);
+	if(filename.length<1){
+		alert("첨부할 사진을 선택해 주십시요.");
+		return false;
+	}else{
+		var dot = filename.lastIndexOf(".");
+		var ext = filename.substr(dot+1);
+		ext = ext.toLowerCase();
+		
+		if(ext=="jpg"||ext=="png"||ext=="gif"){
+			
+			return true;
+		}else{
+			alert("png / jpg / gif 파일만 업로드할 수 있습니다.");
+			return false;
+		}
+		
+	}
+	return false;
 }//pdsCheck() end

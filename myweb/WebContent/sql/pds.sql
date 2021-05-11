@@ -15,3 +15,11 @@ create sequence pds_seq;
 insert into tb_pds(
 	pdsno,wname,subject,passwd,filename,filesize,regdate)
 values(pds_seq.nextval,?,?,?,?,?,sysdate);
+
+--select list
+select pdsno,wname,subject,filename,regdate,readcnt 
+from tb_pds
+order by regdate desc;
+
+--삭제하기
+글번호와 비밀번호가 일치하면 테이블 행 삭제 + 관련 첨부파일 삭제

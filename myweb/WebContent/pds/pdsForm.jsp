@@ -4,8 +4,9 @@
 
 <!-- 본문 시작 pdsForm.jsp -->
 <div class="container-2">
-<h3>* 글쓰기 *</h3>
+<h3>* 포토갤러리 쓰기 *</h3>
 <p><a href="pdsList.jsp">[포토갤러리로 가기]</a></p>
+
 <form name="photofrm" id="photofrm" method="post" action="pdsIns.jsp" 
 		enctype="multipart/form-data" 
 		onsubmit="return pdsCheck()">
@@ -28,7 +29,7 @@
 </tr>
 <tr>
     <td colspan="2" align="center">
-       <input type="submit" value="사진올리기" class="btn btn-success ">
+       <input type="submit" value="사진올리기" class="btn btn-success">
        <input type="reset"  onclick="history.back();" value="취소" class="btn btn-danger">
     </td>
 </table>
