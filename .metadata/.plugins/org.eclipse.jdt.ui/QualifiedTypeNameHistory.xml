@@ -49,4 +49,6 @@
     <fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
     <fullyQualifiedTypeName name="javax.mail.Authenticator"/>
     <fullyQualifiedTypeName name="javax.mail.PasswordAuthentication"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="net.utility.Utility"/>
 </qualifiedTypeNameHistroy>
