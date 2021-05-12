@@ -4,5 +4,5 @@
 **.metadata
 **/images/**
 .metadata/**
-/utility/**
+**/utility/**
 
