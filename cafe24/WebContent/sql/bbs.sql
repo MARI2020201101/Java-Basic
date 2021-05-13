@@ -1,4 +1,4 @@
---bbs.sql
+--bbs.sql / cafe24
 
  CREATE TABLE tb_bbs (
        bbsno        INT           NOT NULL AUTO_INCREMENT PRIMARY KEY
@@ -13,3 +13,10 @@
        ,readcnt     INT           DEFAULT 0    NOT NULL
        ,ip          VARCHAR(15)   NOT NULL
   );
+
+  --pagination
+ (SELECT bbsno,subject,wname,readcnt,indent,regdt FROM tb_bbs 
+ 	WHERE wname LIKE '%" + word + "%'")
+ 
+ ORDER BY grpno DESC, ansnum ASC
+ LIMIT 0,10;

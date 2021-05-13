@@ -76,8 +76,8 @@ public class MemberDAO {
 		int cnt=0;
 		try {
 			con=dbopen.getConnection();
-			sb.append(" INSERT INTO member(id, passwd, mname, tel, email, zipcode, address1, address2, job, mlevel, mdate)");
-			sb.append(" VALUES(?,?,?,?,?,?,?,?,?,'D1',sysdate)");
+			sb.append(" INSERT INTO member(id, passwd, mname, tel, email, zipcode, address1, address2, job, mlevel)");
+			sb.append(" VALUES(?,?,?,?,?,?,?,?,?,'D1')");
 			
 			pstmt = con.prepareStatement(sb.toString());
 

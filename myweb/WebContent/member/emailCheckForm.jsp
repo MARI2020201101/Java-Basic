@@ -29,7 +29,7 @@
 function blankCheck(){
 	var email=$("#email").val();
 	if(email.length<5){
-		alert("아이디를 5자이상 입력해주십시요");
+		alert("이메일을 5자이상 입력해주십시요");
 		return false;
 	}else{return true;}
 }

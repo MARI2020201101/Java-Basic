@@ -14,7 +14,9 @@ int total = pdsDao.count(col, word);
 
 if(list==null){
 	out.println("게시글 없음");
-}
+}else{
+	
+
 %>
 <br>
 	<table class="table table-hover text-left">
@@ -45,6 +47,7 @@ for(int i=0; i<list.size(); i++){
 				<td><%=pdsDto.getRegdate().substring(0,10) %></td>
 			</tr>
 <%
+}
 }
 %>
 

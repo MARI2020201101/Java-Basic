@@ -51,7 +51,7 @@
 if(s_id!="guest"){
 %>
 	<input type="button" value="삭제" class="btn btn-danger" onclick="location.href='pdsDel.jsp?pdsno=<%=pdsDto.getPdsno()%>'">
-	 <input type="button" value="수정" class="btn btn-warning" onclick="location.href='pdsUpdate.jsp?pdsno=<%=pdsDto.getPdsno()%>'">
+	 
 	
 	
 <% 

@@ -24,8 +24,8 @@ public class NoticeDAO {
 		int cnt=0;
 		try {
 			con=dbopen.getConnection();
-			sb.append(" INSERT INTO tb_notice(noticeno, subject, content)");
-			sb.append(" VALUES(noticeno_seq.nextval,?,?)");
+			sb.append(" INSERT INTO tb_notice(subject, content)");
+			sb.append(" VALUES(?,?)");
 			
 			pstmt = con.prepareStatement(sb.toString());
 
@@ -253,35 +253,34 @@ public class NoticeDAO {
 	      
 	      word = word.trim();
 	      
-	      if(word.length()==0) { 
+	      if(word.length()==0) {  
 	    	  sb.append(" SELECT noticeno, subject, content, regdt, r");
-	    	  sb.append(" FROM( SELECT noticeno, subject, content, regdt, rownum as r");
+	    	  sb.append(" FROM( SELECT noticeno, subject, content, regdt, @RNO := @RNO + 1 AS r");
 	    	  sb.append("       FROM ( SELECT noticeno, subject, content, regdt");
-	    	  sb.append("              FROM tb_notice");
-	    	  sb.append("              ORDER BY noticeno desc");
-	    	  sb.append("           )");
-	    	  sb.append("     )");
-	    	  sb.append(" WHERE r>=" + startRow + " AND r<=" + endRow) ;
-	        
+	    	  sb.append("       FROM tb_notice ");
+	    	  sb.append("       )A, ( SELECT @RNO := 0 ) B ORDER BY noticeno desc");
+	    	  sb.append("        )C WHERE r>="+ startRow +" AND r<="+ endRow);
+	    	  
+	    	  
 	      } else {
 
 	    	  sb.append(" SELECT noticeno, subject, content, regdt, r");
-	    	  sb.append(" FROM( SELECT noticeno, subject, content, regdt, rownum as r");
+	    	  sb.append(" FROM( SELECT noticeno, subject, content, regdt, @RNO := @RNO + 1 AS r");
 	    	  sb.append("       FROM ( SELECT noticeno, subject, content, regdt");
-	    	  sb.append("              FROM tb_notice");
-	        String search="";
-	        if(col.equals("subject")) {
-				search+="	WHERE subject LIKE '%"+word+"%'";
-			}else {
-				search+="	WHERE content LIKE '%"+word+"%'"+" OR subject LIKE '%"+word+"%'";
-			}
-			
-	        sb.append(search);        
-	        
-	        sb.append("              ORDER BY noticeno desc");
-	        sb.append("           )");
-	        sb.append("     )");
-	        sb.append(" WHERE r>=" + startRow + " AND r<=" + endRow) ;
+	    	  sb.append("       FROM tb_notice ");
+	    	  
+	    	  String search="";
+		        if(col.equals("subject")) {
+					search+="	WHERE subject LIKE '%"+word+"%'";
+				}else {
+					search+="	WHERE content LIKE '%"+word+"%'"+" OR subject LIKE '%"+word+"%'";
+				}
+				
+		        sb.append(search);        
+	    	  
+	    	  sb.append("       )A, ( SELECT @RNO := 0 ) B ORDER BY noticeno desc");
+	    	  sb.append("        )C WHERE r>="+ startRow +" AND r<="+ endRow);
+	    	  
 	      }//if end
 	      
 	      pstmt=con.prepareStatement(sb.toString());

@@ -112,35 +112,32 @@ public class PdsDAO {
 	      
 	      word = word.trim();
 	      
-	      if(word.length()==0) { 
+	      if(word.length()==0) {    	  
 	    	  sb.append(" SELECT pdsno,wname,subject,filename,regdate,readcnt, r");
-	    	  sb.append(" FROM( SELECT pdsno,wname,subject,filename,regdate,readcnt, rownum as r");
+	    	  sb.append(" FROM( SELECT pdsno,wname,subject,filename,regdate,readcnt, @RNO := @RNO + 1 AS r");
 	    	  sb.append("       FROM ( SELECT pdsno,wname,subject,filename,regdate,readcnt");
-	    	  sb.append("              FROM tb_pds");
-	    	  sb.append("              ORDER BY regdate desc");
-	    	  sb.append("           )");
-	    	  sb.append("     )");
-	    	  sb.append(" WHERE r>=" + startRow + " AND r<=" + endRow) ;
+	    	  sb.append("       FROM tb_pds ");
+	    	  sb.append("       )A, ( SELECT @RNO := 0 ) B ORDER BY regdate desc");
+	    	  sb.append("        )C WHERE r>="+ startRow +" AND r<="+ endRow);
 	        
 	      } else {
 
 	    	  sb.append(" SELECT pdsno,wname,subject,filename,regdate,readcnt, r");
-	    	  sb.append(" FROM( SELECT pdsno,wname,subject,filename,regdate,readcnt,rownum as r");
+	    	  sb.append(" FROM( SELECT pdsno,wname,subject,filename,regdate,readcnt, @RNO := @RNO + 1 AS r");
 	    	  sb.append("       FROM ( SELECT pdsno,wname,subject,filename,regdate,readcnt");
-	    	  sb.append("              FROM tb_pds");
-	        String search="";
-	        if(col.equals("subject")) {
-				search+="	WHERE subject LIKE '%"+word+"%'";
-			}else {
-				search+="	WHERE filename LIKE '%"+word+"%'"+" OR subject LIKE '%"+word+"%'";
-			}//제목명, 이미지사진명+ 제목명
-			
-	        sb.append(search);        
-	        
-	        sb.append("              ORDER BY regdate desc");
-	        sb.append("           )");
-	        sb.append("     )");
-	        sb.append(" WHERE r>=" + startRow + " AND r<=" + endRow) ;
+	    	  sb.append("       FROM tb_pds ");
+	    	  
+	    	  String search="";
+		        if(col.equals("subject")) {
+					search+="	WHERE subject LIKE '%"+word+"%'";
+				}else {
+					search+="	WHERE filename LIKE '%"+word+"%'"+" OR subject LIKE '%"+word+"%'";
+				}//제목명, 이미지사진명+ 제목명
+				
+		        sb.append(search);        
+	    	  
+	    	  sb.append("       )A, ( SELECT @RNO := 0 ) B ORDER BY regdate desc");
+	    	  sb.append("        )C WHERE r>="+ startRow +" AND r<="+ endRow);
 	      }//if end
 	      
 	      pstmt=con.prepareStatement(sb.toString());

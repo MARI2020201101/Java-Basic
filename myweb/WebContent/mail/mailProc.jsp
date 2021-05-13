@@ -52,7 +52,7 @@
 		content += "</tr>";
 		content += "</table>";
 		//이미지 보여주기?
-		content += "<img src='http://localhost:8081/myweb/images/devil.png'>";
+		//content += "<img src='http://localhost:8081/myweb/images/devil.png'>";
 		
 		//받는사람 이메일 주소
 		InternetAddress[] address={new InternetAddress(to)};

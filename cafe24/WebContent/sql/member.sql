@@ -1,7 +1,7 @@
 --member.sql
 
 CREATE TABLE member (
-    id       VARCHAR(10)  NOT NULL, -- 아이디, 중복 안됨, 레코드를 구분하는 컬럼
+    id       VARCHAR(10)  NOT NULL PRIMARY KEY, -- 아이디, 중복 안됨, 레코드를 구분하는 컬럼
     passwd   VARCHAR(10)  NOT NULL, -- 패스워드
     mname    VARCHAR(20)  NOT NULL, -- 성명
     tel      VARCHAR(14)  NULL,     -- 전화번호
@@ -11,6 +11,6 @@ CREATE TABLE member (
     address2 VARCHAR(255) NULL,     -- 주소 2(나머지주소)
     job      VARCHAR(20)  NOT NULL, -- 직업
     mlevel   CHAR(2)      NOT NULL, -- 회원 등급, A1, B1, C1, D1, E1, F1
-    mdate    DATE         NOT NULL, -- 가입일   
-    PRIMARY KEY (id)
+    mdate    DATETIME        DEFAULT CURRENT_TIMESTAMP -- 가입일   
+    
 );

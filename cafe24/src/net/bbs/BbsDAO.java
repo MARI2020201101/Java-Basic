@@ -347,40 +347,42 @@ public class BbsDAO {
 	      word = word.trim(); 
 	      
 	      if(word.length()==0) { 
-	    	  sb.append(" SELECT bbsno,subject,wname,readcnt,indent,regdt, r");
-	    	  sb.append(" FROM( SELECT bbsno,subject,wname,readcnt,indent,regdt, rownum as r");
-	    	  sb.append("       FROM ( SELECT bbsno,subject,wname,readcnt,indent,regdt");
-	    	  sb.append("              FROM tb_bbs");
-	    	  sb.append("              ORDER BY grpno DESC, ansnum ASC");
-	    	  sb.append("           )");
-	    	  sb.append("     )");
-	    	  sb.append(" WHERE r>=" + startRow + " AND r<=" + endRow) ;
-	        
+	    	  sb.append(" SELECT bbsno,subject,wname,content,readcnt,indent,regdt, grpno,ansnum, r");
+	    	  sb.append(" FROM( SELECT bbsno,subject,wname,content,readcnt,indent,regdt, grpno,ansnum, @RNO := @RNO + 1 AS r");
+	    	  sb.append("       FROM ( SELECT bbsno,subject,wname,content,readcnt,indent,regdt, grpno,ansnum");
+	    	  sb.append("       FROM tb_bbs ");
+	    	  sb.append("       )A, ( SELECT @RNO := 0 ) B ORDER BY grpno DESC, ansnum ASC");
+	    	  sb.append("        )C WHERE r>="+ startRow +" AND r<="+ endRow);
+		    	  	    	         
 	      } else {
-	        
-	    	  sb.append(" SELECT bbsno,subject,wname,readcnt,indent,regdt, r");
-	    	  sb.append(" FROM( SELECT bbsno,subject,wname,readcnt,indent,regdt, rownum as r");
-	    	  sb.append("       FROM ( SELECT bbsno,subject,wname,readcnt,indent,regdt");
-	    	  sb.append("              FROM tb_bbs");
-	        
-	        String search="";
-	        if(col.equals("wname")) {
-	          search += " WHERE wname LIKE '%" + word + "%'";
-	        } else if(col.equals("subject")) {
-	          search += " WHERE subject LIKE '%" + word + "%'";
-	        } else if(col.equals("content")) {
-	          search += " WHERE content LIKE '%" + word + "%'";
-	        } else if(col.equals("subject_content")) {
-	          search += " WHERE subject LIKE '%" + word + "%'";
-	          search += " OR content LIKE '%" + word + "%'";
-	        }
-	        
-	        sb.append(search);        
-	        
-	        sb.append("              ORDER BY grpno DESC, ansnum ASC");
-	        sb.append("           )");
-	        sb.append("     )");
-	        sb.append(" WHERE r>=" + startRow + " AND r<=" + endRow) ;
+	    	  sb.append(" SELECT grpno,ansnum,bbsno,subject,wname,content,readcnt,indent,regdt, r");
+	    	  sb.append(" FROM( SELECT grpno,ansnum,bbsno,subject,wname,content,readcnt,indent,regdt, @RNUM := @RNUM + 1 AS r");
+	    	  sb.append(" FROM ( SELECT grpno,ansnum,bbsno,subject,wname,content,readcnt,indent,regdt");
+	    	  sb.append(" FROM tb_bbs");
+	    	  
+	    	  
+	    	  
+	          String search="";
+		        if(col.equals("wname")) {
+		          search += " WHERE wname LIKE '%" + word + "%'";
+		        } else if(col.equals("subject")) {
+		          search += " WHERE subject LIKE '%" + word + "%'";
+		        } else if(col.equals("content")) {
+		          search += " WHERE content LIKE '%" + word + "%'";
+		        } else if(col.equals("subject_content")) {
+		          search += " WHERE subject LIKE '%" + word + "%'";
+		          search += " OR content LIKE '%" + word + "%'";
+		        }
+		        
+		        sb.append(search); 
+	    	  
+	    	  
+	    	  
+	    	  
+	    	  sb.append(" )A, ( SELECT @RNUM := 0 ) B  ORDER BY grpno DESC, ansnum ASC");
+	    	  sb.append(" )C");
+	    	  sb.append(" WHERE r>="+ startRow +" AND r<="+ endRow);
+
 	      }//if end
 	      
 	      pstmt=con.prepareStatement(sb.toString());
