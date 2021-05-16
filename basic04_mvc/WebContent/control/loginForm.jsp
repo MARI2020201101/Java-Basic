@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3>login</h3>
-<form method="get" action="loginProc.do">
+<form method="post" action="loginProc.do">
 아이디 :<input type="text" name="uid">
 비번 : <input type="text" name="upw">
 <input type="submit" value="submit">
