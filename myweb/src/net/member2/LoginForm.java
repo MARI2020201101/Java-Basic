@@ -1,14 +1,15 @@
-package net.action;
+package net.member2;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Index implements CommandAction{
+import net.action.CommandAction;
+
+public class LoginForm implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return "/index.jsp";
-
+		return "/member2/loginForm.jsp";
 	}
 
 }

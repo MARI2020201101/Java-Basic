@@ -3,11 +3,12 @@ package net.controller;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Properties;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,9 +21,8 @@ public class MyController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
-	private HashMap<String, Object> commandMap;
+	private Map<String, CommandAction> commandMap = new HashMap<>();
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		//init-param으로 설정해둔 properties 가져오기
@@ -38,17 +38,16 @@ public class MyController extends HttpServlet{
 			System.out.println("InputStream err :" + e);
 		}
 		
-		//읽어온 properties파일 안의 내용을 key-value로 나누어서 commandMap에 저장
-		Iterator iter = properties.keySet().iterator();
-		if(iter.hasNext()) {
+		//읽어온 properties파일 안의 내용을 key-value로 나눈다
+		Iterator<?> iter = properties.keySet().iterator();
+		while(iter.hasNext()) {
 			String key = (String) iter.next();
 			String value = properties.getProperty(key);
 			System.out.println("value : " + value);
 			try{
+				//reflection이용해서 value를 실제 object로 바꿈, map에 저장
 				Class<?> commandClass = Class.forName(value);
-				System.out.println(commandClass.getName());
-
-				Object instance = commandClass.getDeclaredConstructor().newInstance();
+				CommandAction instance = (CommandAction) commandClass.getDeclaredConstructor().newInstance();
 				commandMap.put(key, instance);
 			}catch(Exception e) {
 				System.out.println("No such Class Err : "+e);
@@ -68,27 +67,27 @@ public class MyController extends HttpServlet{
 		process(req,resp);
 	}
 
-	public void process(HttpServletRequest req, HttpServletResponse resp){
-		String uri = req.getRequestURI();
-		CommandAction commandServlet = (CommandAction) commandMap.get(uri);
+	protected void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		
+		//실제 request들어왔을때 map안에 있는 servlet 담당view String으로 가져옴
 		try {
-			commandServlet.requestPro(req, resp);
+			String uri = req.getRequestURI();
+			CommandAction commandServlet=commandMap.get(uri);
+			String view =commandServlet.requestPro(req, resp);
+			
+			System.out.println("commandServlet.getClass().getName() :" + commandServlet.getClass().getName());
+			/*if(commandServlet.getClass().getName().contains("Pro")) {
+				resp.sendRedirect(view);
+			}else {*/
+				RequestDispatcher rd = req.getRequestDispatcher(view);	
+				rd.forward(req, resp);
+				/*
+				 * }
+				 */
 		} catch (Exception e) {
-			System.out.println("Servlet Exception : "+ e);
-		}
-		
-		
+			System.out.println("requestProcess Exception : "+ e);
+		}	
 		
 	}
-	
-	
-	/*
-	 * @Override public void init() throws ServletException {
-	 * System.out.println("MyController init..."); }
-	 * 
-	 * @Override protected void service(HttpServletRequest arg0, HttpServletResponse
-	 * arg1) throws ServletException, IOException {
-	 * System.out.println("MyController...."); super.service(arg0, arg1); }
-	 */
 
 }
