@@ -20,7 +20,7 @@ public class BbsForm implements CommandAction{
 		request.setAttribute("ref", ref);
 		request.setAttribute("re_step", re_step);
 		request.setAttribute("re_level", re_level);
-		return "bbsForm.jsp";
+		return "/bbs2/bbsForm.jsp";
 		
 	}
 
