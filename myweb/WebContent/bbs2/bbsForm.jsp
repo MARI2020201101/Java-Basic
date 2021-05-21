@@ -11,7 +11,7 @@
 
 <table class="table">
 <tr>
-  <td align="right" colspan="2"><a href="/myweb/bbs2/bbsList.do">글목록</a></td>
+  <td align="right" colspan="2"><a href="${root }/bbs2/bbsList.do">글목록</a></td>
 </tr>
 <tr>
   <td>이름</td>

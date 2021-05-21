@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.lir.aarch64.AArch64ArithmeticOp.ExtendedAddSubShiftOp"/>
     <fullyQualifiedTypeName name="oop0317.Suwon"/>
     <fullyQualifiedTypeName name="oop0317.HighSchool"/>
@@ -25,7 +24,6 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="net.utility.DBClose"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="net.sungjuk.SungjukDTO"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -56,8 +54,10 @@
     <fullyQualifiedTypeName name="net.member2.MemberDBBean"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
-    <fullyQualifiedTypeName name="net.utility.Utility"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-    <fullyQualifiedTypeName name="net.bbs2.BoardDataBean"/>
     <fullyQualifiedTypeName name="net.bbs2.BoardDBBean"/>
+    <fullyQualifiedTypeName name="net.bbs2.BoardDataBean"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="net.utility.Utility"/>
 </qualifiedTypeNameHistroy>

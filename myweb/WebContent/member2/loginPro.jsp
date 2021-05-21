@@ -9,7 +9,7 @@
 <br>
 <c:if test="${res==1 }">
 	<c:set var="memid" value="${sessionScope.s_id }" scope="session"/>
-	<meta http-equiv="Refresh" content="0;url=/myweb/member2/loginForm.do">
+	<meta http-equiv="Refresh" content="0;url=${root }/member2/loginForm.do">
 </c:if>
 <c:if test="${res==0}">
 	<span>아이디 또는 패스워드를 확인해주십시요</span>

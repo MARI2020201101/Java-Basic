@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.action.CommandAction;
+import net.utility.Utility;
 
 public class BbsForm implements CommandAction{
 
@@ -16,6 +17,7 @@ public class BbsForm implements CommandAction{
 			re_step=Integer.parseInt(request.getParameter("re_step"));
 			re_level=Integer.parseInt(request.getParameter("re_level"));
 			}
+		request.setAttribute("root", Utility.getRoot());
 		request.setAttribute("num", num);
 		request.setAttribute("ref", ref);
 		request.setAttribute("re_step", re_step);

@@ -1,3 +1,3 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<meta http-equiv="Refresh" content="0;url=/myweb/bbs2/bbsList.do">
+<meta http-equiv="Refresh" content="0;url=${root }/bbs2/bbsList.do">

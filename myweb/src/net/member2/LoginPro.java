@@ -21,6 +21,7 @@ private MemberDBBean dao = new MemberDBBean();
 		if(cnt!=0) {
 			request.setAttribute("id", id);
 			request.setAttribute("passwd", passwd);
+			request.setAttribute("root", Utility.getRoot());
 			HttpSession session = request.getSession();
 			session.setAttribute("s_id", id);
 			session.setAttribute("s_passwd", passwd);

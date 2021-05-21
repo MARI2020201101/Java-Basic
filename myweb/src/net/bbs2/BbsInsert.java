@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.action.CommandAction;
+import net.utility.Utility;
 
 public class BbsInsert implements CommandAction{
 
@@ -27,7 +28,7 @@ public class BbsInsert implements CommandAction{
 
 		BoardDBBean dao = new BoardDBBean();
 		dao.insertArticle(bean);
-		
+		request.setAttribute("root", Utility.getRoot());
 		return "insertProc.jsp";
 		
 	}

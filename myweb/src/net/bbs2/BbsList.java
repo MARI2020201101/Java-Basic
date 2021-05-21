@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.action.CommandAction;
+import net.utility.Utility;
 
 public class BbsList implements CommandAction{
 
@@ -54,7 +55,7 @@ public class BbsList implements CommandAction{
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("list", list);
-		
+		request.setAttribute("root", Utility.getRoot());
 		return "bbsList.jsp";
 	}
 

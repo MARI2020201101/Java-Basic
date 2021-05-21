@@ -23,5 +23,7 @@ public static void main(String[] args) {
 	int j=7;
 	char op='%';
 	operation.operate(op, i, j);
+	
+	
 }
 }

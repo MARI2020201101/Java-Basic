@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import net.action.CommandAction;
+import net.utility.Utility;
 
 public class Logout implements CommandAction{
 
@@ -14,6 +15,7 @@ public class Logout implements CommandAction{
 		session.removeAttribute("s_id");
 		session.removeAttribute("s_passwd");
 		session.removeAttribute("memid");
+		request.setAttribute("root", Utility.getRoot());
 		return "logout.jsp";
 	}
 
